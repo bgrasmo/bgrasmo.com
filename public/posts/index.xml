@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on bgrasmo.com blog</title>
+    <link>https://bgrasmo.com/posts/</link>
+    <description>Recent content in Posts on bgrasmo.com blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2024 11:07:01 +0100</lastBuildDate>
+    <atom:link href="https://bgrasmo.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudflared</title>
+      <link>https://bgrasmo.com/posts/20241201-cloudflared/</link>
+      <pubDate>Sun, 01 Dec 2024 11:07:01 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241201-cloudflared/</guid>
+      <description>Installing cloudflared for secure traffic to cloudflare and hiding our server</description>
+    </item>
+    <item>
+      <title>SNMP and RRDtool</title>
+      <link>https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/</link>
+      <pubDate>Sat, 30 Nov 2024 17:43:51 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/</guid>
+      <description>Installing SNMP and RRDtool to create graphs of CPU load and network usage</description>
+    </item>
+    <item>
+      <title>First Post</title>
+      <link>https://bgrasmo.com/posts/20241127-first-post/</link>
+      <pubDate>Wed, 27 Nov 2024 17:16:55 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241127-first-post/</guid>
+      <description>We are live, weclome! Here is a short introduction to this page as well as how I set it up and are running it</description>
+    </item>
+  </channel>
+</rss>

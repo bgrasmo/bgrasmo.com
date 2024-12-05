@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    First Post | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20241127-first-post/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20241127-first-post/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="First Post">
+  <meta property="og:description" content="We are live, weclome! Here is a short introduction to this page as well as how I set it up and are running it">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-11-27T17:16:55+01:00">
+    <meta property="article:modified_time" content="2024-11-27T17:16:55+01:00">
+    <meta property="article:tag" content="Intro">
+    <meta property="article:tag" content="Setup">
+    <meta property="article:tag" content="Vps">
+    <meta property="article:tag" content="Ubuntu">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Caddy">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">First Post</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-11-27T17:16:55&#43;01:00">Published 2024-11-27 17:16:55</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vps">VPS</a></li>
+    <li><a href="#firewall">Firewall</a></li>
+    <li><a href="#caddy">Caddy</a></li>
+    <li><a href="#goaccess">Goaccess</a></li>
+    <li><a href="#cloudflare">Cloudflare</a></li>
+    <li><a href="#hugo">Hugo</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h1 class="heading" id="we-are-live">
+  We are live!
+  <a href="#we-are-live">#</a>
+</h1>
+<p>Welcome! This has been a long time in the making, so I am excited to finally have
+the site up and running.</p>
+<p>The first thing I will write about is exactly that, how I set this up and run it.
+This is just the first edition and I plan on detailing a lot of this later, but
+for now I just want to get this out there.</p>
+<h2 class="heading" id="vps">
+  VPS
+  <a href="#vps">#</a>
+</h2>
+<p>I host this myself on a VPS I rent from Hetzner, running Ubuntu Linux as that is
+what I am most familiar with. I like using a VPS because then I also get to
+tinker with the server, like setting up tools on it and configuring the
+firewall.</p>
+<h2 class="heading" id="firewall">
+  Firewall
+  <a href="#firewall">#</a>
+</h2>
+<p>I use nftables as the firewall. I&rsquo;ve used OpenBSD and FreeBSD more &ldquo;seriously&rdquo;
+than I have used Linux, so nftables was the one that made the most sense to me
+as it seemed the most similar to what I already knew.</p>
+<h2 class="heading" id="caddy">
+  Caddy
+  <a href="#caddy">#</a>
+</h2>
+<p>To serve the pages I use Caddy as it was quite nice and easy to set up. It also
+provides automatic https for your site if you need that. There are other ways
+of getting certificates for your site which I will get back to later.</p>
+<h2 class="heading" id="goaccess">
+  Goaccess
+  <a href="#goaccess">#</a>
+</h2>
+<p>To analyze the traffic logs from Caddy, I use Goaccess which produces nice
+reports right out of the box.</p>
+<h2 class="heading" id="cloudflare">
+  Cloudflare
+  <a href="#cloudflare">#</a>
+</h2>
+<p>The domain was bought through cloudflare and are hosted by them, with the added
+bonus that they provide caching as well as some basic protection from attacks.
+In addition I use their <code>cloudflared</code> to set up an outgoing tunnel from my
+server to their network, which they send traffic through. That means I don&rsquo;t
+need to have the web ports open, making the actual server practically invisible.</p>
+<h2 class="heading" id="hugo">
+  Hugo
+  <a href="#hugo">#</a>
+</h2>
+<p>Then finally the blogging software. I use Hugo which is a statis site generator,
+making it easy to host your site practically anywhere.</p>
+<p>The theme I use is <code>typo</code> but with some modifications:</p>
+<ul>
+<li>Changed the main font from Literata to Roboto</li>
+<li>Changed the monospace font from Monaspace Argon to Monaspace Neon</li>
+<li>Moved the embedded JavaScript for setting theme automatically to its own file</li>
+<li>Removed the / in front of the links in the header as I think it looks better without</li>
+<li>Changed the date format shown to yyyy-mm-dd as that is my preference</li>
+</ul>
+<p>The reason for changing the font is purely subjective. Content such as CSS and
+JavaScript should be in their own files and not togheter with the html, and certain
+security headers will block these from loading if that isn&rsquo;t done. I plan on
+setting these headers later as it&rsquo;s considered good practice. I just need to find out
+what to set and how to set it first, but I thought I would prepare for it already.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>

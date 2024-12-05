@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    Cloudflared | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20241201-cloudflared/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20241201-cloudflared/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="Cloudflared">
+  <meta property="og:description" content="Installing cloudflared for secure traffic to cloudflare and hiding our server">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-01T11:07:01+01:00">
+    <meta property="article:modified_time" content="2024-12-01T11:07:01+01:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Cloudflared</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-01T11:07:01&#43;01:00">Published 2024-12-01 11:07:01</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>How to set up cloudflared to protect your (origin) server by creating a tunnel and not needing to have the web ports open to the world.</p>
+<p>Now isn&rsquo;t that an enticing title.</p>
+<p>In any case, the requirements here are to have one or more domains that are managed by cloudflare
+and then the access to install the cloudflare daemon on the webserver.</p>
+<p>Installing cloudflared is pretty straightforward I think, see step 1 here:
+<a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/">Download and install cloudflared</a> or just the <a href="https://pkg.cloudflare.com/index.html">Cloudflare packages</a> page.</p>
+<p>Do note that they don&rsquo;t have a package for Ubuntu Linux 24 (noble) yet, but the package for 22 (jammy)
+can be used.</p>
+<p>After <code>cloudflared</code> has been installed on the server, go to <a href="https://one.dash.cloudflare.com/">one.dash.cloudflare.com</a>
+and click on <code>Networks</code> on the menu on the left hand side. Then click on <code>create tunnel</code>.
+Click on &ldquo;Select Cloudflared&rdquo;, then name your tunnel. I suggest using something you can
+identify your server by, as you should only have one tunnel per server, then click &ldquo;save tunnel&rdquo;.</p>
+<p>On the next page you will <code>install and run a connector</code>. Click on the
+&ldquo;If you already have cloudflared installed&hellip;&rdquo; area to copy the command to run on your server.
+It should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo cloudflared service install eySECRETtokenTHATshouldNOTbeSHARED
+</span></span></code></pre></div><p>Run this on your server where you just installed cloudflared. If you have an IPv4 address
+on the server, the command should exit successfully and the tunnel should be running.
+You&rsquo;ll see something like <code>Linux service for cloudflared installed successfully</code> in the console.</p>
+<p>If you only have an IPv6 address, the command will seem to hang and never finish. Press Ctrl-C
+to cancel it. It will have installed successfully (at least it did in my case) but since
+it tries to establish an IPv4 tunnel, it will not complete.</p>
+<p>Calling <code>sudo systemctl status cloudflared</code> should show where the service file is installed.
+It should be <code>etc/systemd/system/cloudflared.service</code>. Edit this file and change the <code>ExecStart</code>
+line so it looks like this:</p>
+<pre tabindex="0"><code>ExecStart=/usr/bin/cloudflared --edge-ip-version 6 --no-autoupdate tunnel run --token eySECRETtokenTHATshouldNOTbeSHARED
+</code></pre><p>Then execute:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>$ sudo systemctl restart cloudflared
+</span></span></code></pre></div><p>The cloudflare daemon will now connect to cloudflare using IPv6 only, and you should see that is has
+connected in the cloudflare dashboard. Click next to configure what address should be routed
+through this tunnel.</p>
+<p>Select a subdomain or not, like <code>www</code> if you want to, it is not required, and then the domain.
+Then select the type of traffic your server accepts, like http. Then add the URL of your local
+webserver. If it listens on port 80, URL should be <code>localhost:80</code>, if it listens on port 8080,
+URL should be <code>localhost:8080</code> and so on.</p>
+<p>You can also specify <code>type=https</code> and then <code>localhost:443</code> but I am not sure this adds much
+giving this traffic is local on your server.</p>
+<p>When your domain and server is behind cloudflare, traffic will flow something like this:</p>
+<pre tabindex="0"><code>Client browser -&gt;
+ closest cloudflare server
+ this accepts the traffic, serves the result from their cache if they should or
+ routes traffic within their network to closest point to your actual server
+ and then sendes traffic encrypted through the tunnel to your server
+</code></pre><p>The acute reader might notice there is a possible privacy issue here. For cloudflare
+to route your traffic they need to decrypt it at their edge, which they can do as they
+register a certificate for your domain when you order it with them. They probably
+route traffic encrypted in their network, but you have to trust them not to be
+snooping. For this site, I am not concerned about that and the protection it gives
+is worth more to me.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>
