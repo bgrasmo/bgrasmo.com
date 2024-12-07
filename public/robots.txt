@@ -1,0 +1,3 @@
+# Everything is allowed, here is the map of the site
+Sitemap: https://bgrasmo.com/sitemap.xml
+Sitemap: https://www.bgrasmo.com/sitemap.xml
