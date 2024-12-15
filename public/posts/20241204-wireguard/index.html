@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    Install and configure wireguard | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20241204-wireguard/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20241204-wireguard/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="Install and configure wireguard">
+  <meta property="og:description" content="Installing and configuring wireguard, a simple, fast and modern VPN on Linux, FreeBSD and OpenBSD">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-04T19:04:35+01:00">
+    <meta property="article:modified_time" content="2024-12-15T13:11:03+01:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Install and configure wireguard</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-04T19:04:35&#43;01:00">First published: 2024-12-04 19:04:35</time>
+      
+      <br>
+      
+      
+      
+      <time datetime="2024-12-15T13:11:03&#43;01:00">Last updated: 2024-12-15 13:11:03</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>WireGuard is according to Wikipedia &ldquo;a communication protocol and free and
+open-source software that implements encrypted virtual private networks&rdquo;, and
+per the Wiregard page &ldquo;extremely simple yet fast and modern&rdquo;. I don&rsquo;t have experience with any other VPNs so don&rsquo;t know what they are like, but if done
+the right way I think Wireguard is quite easy to set up and get working.</p>
+<p>It is however lacking a little when it comes to documentation. The
+commandline animations on their page I find a little annoying, especially the
+one that can&rsquo;t be paused. Fortunately there are plenty of pages with details
+on how to easily set it up.</p>
+<p>So why this page then? I want to have a go-to place for the config file as
+that is my preferred way of setting up wireguard, instead of having to use a
+bunch of somewhat obscure commands I never remember in order to configure
+the interface manually.</p>
+<p>I will detail setups for Ubuntu Linux, FreeBSD and OpenBSD. Linux and FreeBSD
+are quite similar while the setup for OpenBSD is only slightly different.</p>
+<p>Vultr has a good guide for setting up <a href="https://docs.vultr.com/how-to-install-wireguard-vpn-on-freebsd-14-0">Wireguard on FreeBSD 14</a> in case you want other
+words on how to set up and configure it. The configuration file is pretty much
+the same independent of the platform, so it&rsquo;s just the commands that can be
+different.</p>
+<p>To install, please refer to the <a href="https://wireguard.com/install/">wireguard.com/install</a> page as they are most likely more up
+to date than what this page will be when it comes to installation.</p>
+<p>Wireguard is already in the FreeBSD base system, and you have the <code>wg</code> command
+available if you want to set it up that way. By installing the package you
+will get the <code>wg-quick</code> tool as well and the startup script using it will
+be added. <code>Wg-quick</code> is also available on OpenBSD but I found it easier to
+just use <code>wg</code> there. The advantage to using <code>wg-quick</code> is that it will also
+set up the virtual interface for you, so on OpenBSD it is necessary to add a
+<code>/etc/hostname.wg0</code> file to add configuration for the interface. This will
+also function as the startup script.</p>
+<p>I find it easiest to execute the rest of the commands as root as the
+wireguard directory has, and should have restrictive permissions. If you&rsquo;re following this for FreeBSD remember to be in <code>/usr/local/etc</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># cd /etc/wireguard</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># umask 077</span>
+</span></span></code></pre></div><p>The <code>umask</code> command makes sure the files we create will also have restrictive
+permissions, meaning read and write of them is only available to the current
+user, in other words root.</p>
+<p>One basis of Wireguard is that it uses key-value pairs. You will be creating
+a private and a public key, and the ones we connect with will do the same.
+The private key will be kept secret, while the public key will be exchanged.
+We will also create a pre-shared key, and if using that it should be done for
+each party you connect with. The private and public keys are generated only
+once.</p>
+<p>To create the keys, use the <code>wg</code> utility:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg genkey &gt;private.key</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg pubkey &lt; private.key &gt;public.key</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg genpsk &gt;pre-shared.key</span>
+</span></span></code></pre></div><p>The <code>wg pubkey &lt; private.key</code> means that the public key is derived from the
+private key, as the private key is input to the command. Another way to write
+it would be</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># cat private.key | wg pubkey &gt;public.key</span>
+</span></span></code></pre></div><p>Or if you know your commandline-foo everything can be done in one line:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg genkey | tee private.key | wg pubkey &gt; public.key</span>
+</span></span></code></pre></div><p>The pre-shared key is not strictly necessary, but it adds a symmetric
+encryption key to the mix making this a little more future-proof should there
+ever be quantum-computers powerful enough to crack the asymetric encryption
+being used. It can probably be assumed that state-actors are storing most
+if not all internet traffic, with the purpose of decrypting everything when
+and if said computers become available so I think it&rsquo;s just good practice.</p>
+<p>Now why doesn&rsquo;t everyone just use symmetric encryption then? Because
+transporting that symmetric key safely is a non-trivial problem.</p>
+<p>In any case, let&rsquo;s get started setting up the configuration on our side and
+add the first peer, and then do the same on the peer to establish
+communication between the two.</p>
+<p>I&rsquo;ve created the following keys to be used in this example, which you should
+absolutely not use! I am not using them myself, I just wanted to have actual
+values so it&rsquo;s easy to see what everything should look like.</p>
+<pre tabindex="0"><code>Peer A (us):
+PrivateKey: qOncWvsVv7hTlgD2d++5Sx1ULjTa7zeKHKbuTl1J6GI=
+PublicKey: q9jepA++1o/7bi2wbQaBOG2KUE8/2cz0i29aiv0MXlA=
+
+PreSharedKey: kgC1FhcRNbKj3w5ew33mF5WvIKwMLGY7f5iuy3PBclY=
+
+Peer B (them):
+PrivateKey: CCfMo0ytoDPCPqxNPWAVAUka+no+c2NwivtBoNd21EM=
+PublicKey: lmWvq5Gv8ZyV+9ruZF9APjffGEu0uEDJ5kANdeX6UWY=
+</code></pre><p>Get the private key you created earlier and create the following file in
+<code>/etc/wireguard</code>: <code>wg0.conf</code></p>
+<pre tabindex="0"><code>[Interface]
+PrivateKey = qOncWvsVv7hTlgD2d++5Sx1ULjTa7zeKHKbuTl1J6GI=
+Address = 10.0.0.1/32
+ListenPort = 51820
+</code></pre><p>This will set up a virtual interface called wg0, it specifies that when we
+send traffic through the tunnel we will be using ip address 10.0.0.1 and it
+specifies that we listen on UDP port 51820 for anyone that wants to connect
+to us. The listen port can be changed to anything you want, just remember to
+open the firewall accordingly as well as letting the clients know about it.</p>
+<p>A small note here about the difference between Linux/FreeBSD and OpenBSD is
+that the <code>wg-quick</code> tool being used expects the netmask, the <code>/32</code> in this
+example in the address. For OpenBSD or when just using <code>wg</code>, the netmask is
+not understood and will throw an error, so it should be removed.</p>
+<p>Now this configuration in itself isn&rsquo;t terribly useful as it won&rsquo;t actually
+let anyone connect to us. To allow connections, we have to specify [Peer]
+segments with the peer&rsquo;s configuration. This should contain their public key
+and a pre-shared key if we are using that. As mentioned previously you can
+and probably should have different pre-shared keys for each peer.</p>
+<p>We also need to give our public key to them as they have to add a [Peer]
+section on their side for us. In addition we need to know their public ip if
+we are to esablish connections to them and/or they need to know our public ip
+if they are to connect to us.</p>
+<p>Extend <code>wg0.conf</code> so it now looks like this:</p>
+<pre tabindex="0"><code>[Interface]
+PrivateKey = qOncWvsVv7hTlgD2d++5Sx1ULjTa7zeKHKbuTl1J6GI=
+Address = 10.0.0.1/32
+ListenPort = 51820
+
+[Peer]
+PublicKey = lmWvq5Gv8ZyV+9ruZF9APjffGEu0uEDJ5kANdeX6UWY=
+PreSharedKey = kgC1FhcRNbKj3w5ew33mF5WvIKwMLGY7f5iuy3PBclY=
+AllowedIPs = 10.0.0.2/32
+EndPoint: 2.2.2.2:51820
+</code></pre><p>This specifies that we only allow traffic from ip 10.0.0.2 through the tunnel
+for this peer, and that we can initiate a connection to it on public ip
+2.2.2.2 on port 51280. As soon as we&rsquo;ve connected to the peer they will know
+our public ip and can connect back if needed, but only as long as there has
+been a connection recently.</p>
+<p>On the peer, their configuration should look like this:</p>
+<pre tabindex="0"><code>[Interface]
+PrivateKey = CCfMo0ytoDPCPqxNPWAVAUka+no+c2NwivtBoNd21EM=
+Address = 10.0.0.2/32
+ListenPort = 51820
+
+[Peer]
+PublicKey = q9jepA++1o/7bi2wbQaBOG2KUE8/2cz0i29aiv0MXlA=
+PreSharedKey = kgC1FhcRNbKj3w5ew33mF5WvIKwMLGY7f5iuy3PBclY=
+AllowedIPs = 10.0.0.1/32
+EndPoint: 1.1.1.1:51820
+</code></pre><p>To start everything on Linux/FreeBSD, execute this command as root:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg-quick up wg0</span>
+</span></span></code></pre></div><p>You should now be able to see a new <code>wg0</code> interface with command <code>ip a</code>, and
+you should see the configured peers with command <code>wg</code>. On peer A, us:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg</span>
+</span></span><span style="display:flex;"><span>interface: wg0
+</span></span><span style="display:flex;"><span>  public key: q9jepA++1o/7bi2wbQaBOG2KUE8/2cz0i29aiv0MXlA=
+</span></span><span style="display:flex;"><span>  private key: (hidden)
+</span></span><span style="display:flex;"><span>  listening port: 51820
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>peer: lmWvq5Gv8ZyV+9ruZF9APjffGEu0uEDJ5kANdeX6UWY=
+</span></span><span style="display:flex;"><span>  preshared key: (hidden)
+</span></span><span style="display:flex;"><span>  endpoint: 2.2.2.2:51820
+</span></span><span style="display:flex;"><span>  allowed ips: 10.0.0.2/32
+</span></span><span style="display:flex;"><span>  latest handshake: 2 hours, 7 minutes, 37 seconds ago
+</span></span><span style="display:flex;"><span>  transfer: 2.10 MiB received, 2.34 MiB sent
+</span></span></code></pre></div><p>On peer B, them:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg</span>
+</span></span><span style="display:flex;"><span>interface: wg0
+</span></span><span style="display:flex;"><span>  public key: lmWvq5Gv8ZyV+9ruZF9APjffGEu0uEDJ5kANdeX6UWY=
+</span></span><span style="display:flex;"><span>  private key: (hidden)
+</span></span><span style="display:flex;"><span>  listening port: 51820
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>peer: q9jepA++1o/7bi2wbQaBOG2KUE8/2cz0i29aiv0MXlA=
+</span></span><span style="display:flex;"><span>  preshared key: (hidden)
+</span></span><span style="display:flex;"><span>  endpoint: 1.1.1.1:51820
+</span></span><span style="display:flex;"><span>  allowed ips: 10.0.0.1/32
+</span></span><span style="display:flex;"><span>  latest handshake: 2 hours, 4 minutes, 45 seconds ago
+</span></span><span style="display:flex;"><span>  transfer: 2.34 MiB received, 2.10 MiB sent
+</span></span></code></pre></div><p>Then to bring it down again:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg-quick down wg0</span>
+</span></span></code></pre></div><p>Notice that you might have to allow traffic on the <code>wg0</code> interface through the
+firewall of your system. Then you should be able to ping the other side using
+the private address, either <code>10.0.0.1</code> or <code>10.0.0.2</code> and see &ldquo;latest
+handshake&rdquo; and &ldquo;traffic&rdquo; update with the <code>wg</code> command.</p>
+<p>For OpenBSD, create the file <code>/etc/hostname.wg0</code> and add ip configration to
+it:</p>
+<pre tabindex="0"><code>inet 10.0.0.1 255.255.255.0 NONE
+up
+
+!/usr/local/bin/wg setconf wg0 /etc/wireguard/wg0.conf
+</code></pre><p>Then start wireguard with <code>sh /etc/netstart wg0</code>. This will also ensure that
+it starts at boot.</p>
+<p>To start it with systemd and enable start at boot on Ubuntu Linux:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl <span style="font-weight:bold;font-style:italic">enable</span> wg-quick@wg0
+</span></span><span style="display:flex;"><span>$ sudo systemctl start wg-quick@wg0
+</span></span></code></pre></div><p>On FreeBSD:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo sysrc <span style="color:#666;font-weight:bold;font-style:italic">wireguard_interfaces</span>=<span style="color:#666;font-style:italic">&#34;wg0&#34;</span>
+</span></span><span style="display:flex;"><span>$ sudo sysrc <span style="color:#666;font-weight:bold;font-style:italic">wireguard_enable</span>=<span style="color:#666;font-style:italic">&#34;YES&#34;</span>
+</span></span><span style="display:flex;"><span>$ sudo service wireguard start
+</span></span></code></pre></div>
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>

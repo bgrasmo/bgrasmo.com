@@ -32,7 +32,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-11-27T17:16:55+01:00">
-    <meta property="article:modified_time" content="2024-11-27T17:16:55+01:00">
+    <meta property="article:modified_time" content="2024-12-15T13:18:49+01:00">
     <meta property="article:tag" content="Intro">
     <meta property="article:tag" content="Setup">
     <meta property="article:tag" content="Vps">
@@ -173,7 +173,13 @@
       
       
       
-      <time datetime="2024-11-27T17:16:55&#43;01:00">Published 2024-11-27 17:16:55</time>
+      <time datetime="2024-11-27T17:16:55&#43;01:00">First published: 2024-11-27 17:16:55</time>
+      
+      <br>
+      
+      
+      
+      <time datetime="2024-12-15T13:18:49&#43;01:00">Last updated: 2024-12-15 13:18:49</time>
       
 
       
@@ -196,6 +202,7 @@
     <li><a href="#goaccess">Goaccess</a></li>
     <li><a href="#cloudflare">Cloudflare</a></li>
     <li><a href="#hugo">Hugo</a></li>
+    <li><a href="#deploying">Deploying</a></li>
   </ul>
 </nav>
   </aside>
@@ -263,12 +270,26 @@ making it easy to host your site practically anywhere.</p>
 <li>Moved the embedded JavaScript for setting theme automatically to its own file</li>
 <li>Removed the / in front of the links in the header as I think it looks better without</li>
 <li>Changed the date format shown to yyyy-mm-dd as that is my preference</li>
+<li>Added &ldquo;Last updated&rdquo; to the posts, since I aim to update them and keep them alive</li>
 </ul>
 <p>The reason for changing the font is purely subjective. Content such as CSS and
 JavaScript should be in their own files and not togheter with the html, and certain
 security headers will block these from loading if that isn&rsquo;t done. I plan on
 setting these headers later as it&rsquo;s considered good practice. I just need to find out
 what to set and how to set it first, but I thought I would prepare for it already.</p>
+<h2 class="heading" id="deploying">
+  Deploying
+  <a href="#deploying">#</a>
+</h2>
+<p>When building the site, I tell Hugo to publish to a designated directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ hugo -d ~/bgrasmo.com/public
+</span></span></code></pre></div><p>The <code>bgrasmo.com</code> directory is tracked in git, so I commit and push my changes.</p>
+<p>Then on the webserver I pull the changes, and that is it.</p>
+<p>The directory structure is set up this way to have tracking in git, but avoid sharing
+the <code>.git</code> directory which is in the root directory bgrasmo.com. The webserver only
+serves content from the <code>public</code> directory.</p>
+<p>This step might need some improvement, at some point in time I&rsquo;ll look into how and
+if I can automate some of this.</p>
 
     
   </div>

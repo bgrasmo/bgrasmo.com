@@ -6,8 +6,14 @@
     <description>Recent content in Home on bgrasmo.com blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Dec 2024 11:07:01 +0100</lastBuildDate>
     <atom:link href="https://bgrasmo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install and configure wireguard</title>
+      <link>https://bgrasmo.com/posts/20241204-wireguard/</link>
+      <pubDate>Wed, 04 Dec 2024 19:04:35 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241204-wireguard/</guid>
+      <description>Installing and configuring wireguard, a simple, fast and modern VPN on Linux, FreeBSD and OpenBSD</description>
+    </item>
     <item>
       <title>Cloudflared</title>
       <link>https://bgrasmo.com/posts/20241201-cloudflared/</link>
