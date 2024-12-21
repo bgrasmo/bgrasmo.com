@@ -32,7 +32,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-12-04T19:04:35+01:00">
-    <meta property="article:modified_time" content="2024-12-15T13:24:46+01:00">
+    <meta property="article:modified_time" content="2024-12-21T22:05:40+01:00">
 
 
 
@@ -173,7 +173,7 @@
       
       
       
-      <time datetime="2024-12-15T13:24:46&#43;01:00">Last updated: 2024-12-15 13:24:46</time>
+      <time datetime="2024-12-21T22:05:40&#43;01:00">Last updated: 2024-12-21 22:05:40</time>
       
 
       
@@ -206,20 +206,24 @@ the interface manually.</p>
 are quite similar while the setup for OpenBSD is only slightly different.</p>
 <p>Vultr has a good guide for setting up <a href="https://docs.vultr.com/how-to-install-wireguard-vpn-on-freebsd-14-0">Wireguard on FreeBSD 14</a> in case you want other
 words on how to set up and configure it. The configuration file is pretty much
-the same independent of the platform, so it&rsquo;s just the commands that can be
-different.</p>
+the same independent of the platform, so it&rsquo;s just the commands to start and
+stop the service that can be different.</p>
 <p>To install, please refer to the <a href="https://wireguard.com/install/">wireguard.com/install</a> page as they are most likely more up
-to date than what this page will be when it comes to installation.</p>
+to date than what this page will be when it comes to installation for your
+particular platform.</p>
 <p>Wireguard is already in the FreeBSD base system, and you have the <code>wg</code> command
 available if you want to set it up that way. By installing the package you
 will get the <code>wg-quick</code> tool as well and the startup script using it will
-be added. <code>Wg-quick</code> is also available on OpenBSD but I found it easier to
-just use <code>wg</code> there. The advantage to using <code>wg-quick</code> is that it will also
-set up the virtual interface for you, so on OpenBSD it is necessary to add a
-<code>/etc/hostname.wg0</code> file to add configuration for the interface. This will
-also function as the startup script.</p>
+be added. <code>Wg-quick</code> is available on all platforms I&rsquo;ve tested, but for
+OpenBSD but I found it easier to just use <code>wg</code> and hostname configuration.
+The advantage to using <code>wg-quick</code> is that it will set up the virtual interface
+for you, but configuration files for wg-quick and wg aren&rsquo;t 100% compatible.</p>
+<p>On OpenBSD then it is necessary to add a <code>/etc/hostname.wg0</code> file to configure
+the interface, with the benefit that it will also function as the startup
+script.</p>
 <p>I find it easiest to execute the rest of the commands as root as the
-wireguard directory has, and should have restrictive permissions. If you&rsquo;re following this for FreeBSD remember to be in <code>/usr/local/etc</code>.</p>
+wireguard directory has, and should have restrictive permissions. If you&rsquo;re
+following this for FreeBSD remember to be in <code>/usr/local/etc</code>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># cd /etc/wireguard</span>
 </span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># umask 077</span>
 </span></span></code></pre></div><p>The <code>umask</code> command makes sure the files we create will also have restrictive
@@ -253,7 +257,7 @@ transporting that symmetric key safely is a non-trivial problem.</p>
 add the first peer, and then do the same on the peer to establish
 communication between the two.</p>
 <p>I&rsquo;ve created the following keys to be used in this example, which you should
-absolutely not use! I am not using them myself, I just wanted to have actual
+absolutely not use! I am not using them myself, I just wanted to show actual
 values so it&rsquo;s easy to see what everything should look like.</p>
 <pre tabindex="0"><code>Peer A (us):
 PrivateKey: qOncWvsVv7hTlgD2d++5Sx1ULjTa7zeKHKbuTl1J6GI=
@@ -350,22 +354,75 @@ you should see the configured peers with command <code>wg</code>. On peer A, us:
 firewall of your system. Then you should be able to ping the other side using
 the private address, either <code>10.0.0.1</code> or <code>10.0.0.2</code> and see &ldquo;latest
 handshake&rdquo; and &ldquo;traffic&rdquo; update with the <code>wg</code> command.</p>
-<p>For OpenBSD, create the file <code>/etc/hostname.wg0</code> and add ip configration to
-it:</p>
+<p>For OpenBSD, to complete the setup, create the file <code>/etc/hostname.wg0</code> and
+add ip configration to it:</p>
 <pre tabindex="0"><code>inet 10.0.0.1 255.255.255.0 NONE
 up
 
 !/usr/local/bin/wg setconf wg0 /etc/wireguard/wg0.conf
-</code></pre><p>Then start wireguard with <code>sh /etc/netstart wg0</code>. This will also ensure that
-it starts at boot.</p>
-<p>To start it with systemd and enable start at boot on Ubuntu Linux:</p>
+</code></pre><p>Then start wireguard with <code>sh /etc/netstart wg0</code>. This file will also ensure
+that wireguard starts at boot.</p>
+<p>The setup so far only allows reaching services on the peers, as defined by
+the firewall rules. If traffic should be routed through the peer and onto the
+Internet, the operating system needs to allow forwarding packets. This is
+configured with <code>sysctl</code>:</p>
+<p>Linux:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># sysctl net.ipv4.ip_forward=1</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># sysctl net.ipv6.conf.all.forwarding=1</span>
+</span></span></code></pre></div><p>To make this permanent, edit <code>/etc/sysctl.conf</code> and uncomment the lines that
+looks like the ones above, but without the <code>sysctl</code> command first. If there
+are no such lines, simply add them:</p>
+<pre tabindex="0"><code>net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+</code></pre><p>FreeBSD and OpenBSD are similar:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># sysctl net.inet.ip.forwarding=1</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># sysctl net.inet6.ip6.forwarding=1</span>
+</span></span></code></pre></div><p>Add the lines to <code>/etc/sysctl.conf</code> to make this permanent:</p>
+<pre tabindex="0"><code>net.inet.ip.forwarding=1
+net.inet6.ip6.forwarding=1
+</code></pre><p>It is important to note that there should be no spaces here. In other words,
+<code>net.inet.ip.forwarding = 1</code> won&rsquo;t work.</p>
+<p>You might also have to configure the firewall to allow forwarding packets
+and also do NAT for ipv4. That is out of scope for this document, but I might
+get back to it later.</p>
+<p>To start wireguard with systemd and enable start at boot on Ubuntu Linux:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo systemctl <span style="font-weight:bold;font-style:italic">enable</span> wg-quick@wg0
 </span></span><span style="display:flex;"><span>$ sudo systemctl start wg-quick@wg0
 </span></span></code></pre></div><p>On FreeBSD:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ sudo sysrc <span style="color:#666;font-weight:bold;font-style:italic">wireguard_interfaces</span>=<span style="color:#666;font-style:italic">&#34;wg0&#34;</span>
 </span></span><span style="display:flex;"><span>$ sudo sysrc <span style="color:#666;font-weight:bold;font-style:italic">wireguard_enable</span>=<span style="color:#666;font-style:italic">&#34;YES&#34;</span>
 </span></span><span style="display:flex;"><span>$ sudo service wireguard start
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>To stop the service use the same scripts with <code>stop</code> instead of <code>start</code>.</p>
+<p>On OpenBSD use the <code>ifconfig</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># ifconfig wg0 destroy</span>
+</span></span></code></pre></div><p>To add more peers to the network, simply add more [Peer] blocks like so:</p>
+<pre tabindex="0"><code>[Interface]
+PrivateKey = qOncWvsVv7hTlgD2d++5Sx1ULjTa7zeKHKbuTl1J6GI=
+Address = 10.0.0.1/32
+ListenPort = 51820
+
+[Peer]
+PublicKey = lmWvq5Gv8ZyV+9ruZF9APjffGEu0uEDJ5kANdeX6UWY=
+PreSharedKey = kgC1FhcRNbKj3w5ew33mF5WvIKwMLGY7f5iuy3PBclY=
+AllowedIPs = 10.0.0.2/32
+EndPoint: 2.2.2.2:51820
+
+[Peer]
+PublicKey = 6D8qMzetUQH7dOUZeuPXYj/wdXiA4nQswaQMCXA3GXU=
+PreSharedKey = KEYgEdBieJG4UwTQpz3xrElTHvoWSH/Xi2ox7XnfJxg=
+AllowedIPs = 10.0.0.3/32
+
+[Peer]
+PublicKey = fzECqbQdzi1ce6DYjJiNISct9NW5n5nn7WyIrYqjvwM=
+PreSharedKey = Jt2uGv80J+z5jCa0W7Js+s3pkzYM+gmTNiGm8nkB8r8=
+AllowedIPs = 10.0.0.4/32
+EndPoint: 3.3.3.3:51820
+</code></pre><p>Then use the scripts to restart/reload the configuration.</p>
+<p>On OpenBSD the configuration can be added from disk to the running service
+with <code>wg</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># wg syncconf wg0 /etc/wireguard/wg0.conf</span>
+</span></span></code></pre></div><p>That should be it for now. Hope it was helpful!</p>
+
     
   </div>
 
