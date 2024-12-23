@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    Learning Git and Github | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20241223-learning-git-github/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20241223-learning-git-github/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="Learning Git and Github">
+  <meta property="og:description" content="My notes when learning Git and Github for version control of files">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-23T20:02:13+01:00">
+    <meta property="article:modified_time" content="2024-12-23T21:32:29+01:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts/" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index/" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about/" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now/" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses/" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags/" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Learning Git and Github</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-23T20:02:13&#43;01:00">First published: 2024-12-23 20:02:13</time>
+      
+      <br>
+      
+      
+      
+      <time datetime="2024-12-23T21:32:29&#43;01:00">Last updated: 2024-12-23 21:32:29</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <h1 class="heading" id="working-with-git-and-github">
+  Working with Git and Github
+  <a href="#working-with-git-and-github">#</a>
+</h1>
+<p>My notes for setting up Git and using it with Github.</p>
+<p>Edit: A post with just the commands is available <a href="/posts/20241223-git-github-commands/">here</a>.</p>
+<h2 class="heading" id="download-git">
+  Download git
+  <a href="#download-git">#</a>
+</h2>
+<p>For Mac and windows, download Git from here: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+For Windows, if you want to do any kind of scripting in Git bash select to install all unix tools, otherwise accept the default values.</p>
+<p>For Linux and *BSD, use a suitable package manager for your system. Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>Fedora:
+</span></span><span style="display:flex;"><span>$ sudo dnf install git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ubuntu:
+</span></span><span style="display:flex;"><span>$ sudo apt install git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>FreeBSD:
+</span></span><span style="display:flex;"><span>$ sudo pkg install git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OpenBSD:
+</span></span><span style="display:flex;"><span>$ doas pkg_add git
+</span></span></code></pre></div><h2 class="heading" id="git-configuration">
+  Git configuration
+  <a href="#git-configuration">#</a>
+</h2>
+<p>In a terminal, set up name and email so people know who made the changes:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global user.name <span style="color:#666;font-style:italic">&#34;Your Name&#34;</span>
+</span></span><span style="display:flex;"><span>$ git config --global user.email your-email@example.com
+</span></span></code></pre></div><p>When working with Github, they actually recommend that you don&rsquo;t use your real email to avoid leaking it online.
+There is an alternative address you should use instead which you can find in your Github settings. Select &ldquo;emails&rdquo;
+on the left hand side and look for &ldquo;Keep my email addresses private&rdquo;. There you will find the address you can use
+instead of your real one, while still belonging to you. Make sure to check the box if it isn&rsquo;t already, and also
+check the box below for &ldquo;Block command line pushes that expose my email&rdquo;.</p>
+<p>Next set up VS Code as the editor for Git commit messages and have Git wait until the commit message file is closed before continuing. The command &ldquo;code&rdquo; must be in your path and start VS Code for this to work. This should work by default on Windows and Linux. To add &ldquo;code&rdquo; to path on Mac, see documentation here: <a href="https://code.visualstudio.com/docs/setup/mac">https://code.visualstudio.com/docs/setup/mac</a>. In short:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>1. Open VS Code
+</span></span><span style="display:flex;"><span>2. Press ctrl+shift+p or command+shift+p to open the <span style="font-weight:bold;font-style:italic">command</span> palette
+</span></span><span style="display:flex;"><span>3. Type <span style="color:#666;font-style:italic">&#34;shell command&#34;</span> in the search
+</span></span><span style="display:flex;"><span>4. Select <span style="color:#666;font-style:italic">&#34;Shell Command: Install &#39;code&#39; command in PATH&#34;</span>
+</span></span><span style="display:flex;"><span>5. Restart your terminal
+</span></span></code></pre></div><p>Then execute this command in the terminal to use VS Code by default:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global core.editor <span style="color:#666;font-style:italic">&#34;code --wait&#34;</span>
+</span></span></code></pre></div><p>Lastly, set up how line endings should be handled to avoid problems when
+cooperating with people using a different system. Windows uses CR LF for line
+endrings, Linux/*BSD/Mac only uses LF. So if you are on Windows CR should be
+removed when pushing code to the repository, and added when you are pulling
+code from it. For the Unix variants and Mac, line endings should not be
+touched when pulling code from the repository, but in case the editor used has
+added CR, remove it when pushing to the repository.</p>
+<p>On Windows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>&gt; git config --global core.autocrlf <span style="font-weight:bold;font-style:italic">true</span>
+</span></span></code></pre></div><p>Mac/Linux/*BSD:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global core.autocrlf input
+</span></span></code></pre></div><p>To view your git config:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global -e
+</span></span></code></pre></div><h2 class="heading" id="set-up-a-git-project-to-use-with-github">
+  Set up a Git project to use with Github
+  <a href="#set-up-a-git-project-to-use-with-github">#</a>
+</h2>
+<p>There are two ways to start a new project and use it with Github. Either
+initialize it locally first and then connect it to GitHub, or create it on
+Github first and clone it to get a local copy. If you create a new, empty
+repository on Github, there will be instructions on how to connect to it. If
+readme, gitignore or license files are added, no instructions are shown.</p>
+<h2 class="heading" id="initialize-locally">
+  Initialize locally
+  <a href="#initialize-locally">#</a>
+</h2>
+<p>In a directory of your choosing, create the files you want to add to Github. At the very minimum create a readme file. From the commandline in a terminal:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ <span style="font-weight:bold;font-style:italic">echo</span> <span style="color:#666;font-style:italic">&#34;# My new repository&#34;</span> &gt;&gt; README.md
+</span></span><span style="display:flex;"><span>$ git init
+</span></span><span style="display:flex;"><span>$ git add .
+</span></span><span style="display:flex;"><span>$ git commit -m <span style="color:#666;font-style:italic">&#34;Initial commit&#34;</span>
+</span></span></code></pre></div><p>Create a new, empty repository on Github and note the address to it.
+It will have a format like this: <code>git@github.com:&lt;username&gt;/&lt;repository&gt;.git</code></p>
+<p>Then add remote address to repository and push what we&rsquo;ve got so far:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git branch -M main
+</span></span><span style="display:flex;"><span>$ git remote add origin git@github.com:&lt;username&gt;/&lt;repository&gt;.git
+</span></span><span style="display:flex;"><span>$ git push -u origin main
+</span></span></code></pre></div><p>When changes have been made, check the status of your repository:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git status
+</span></span></code></pre></div><p>Files that are updated will have to be added and pushed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git add .
+</span></span></code></pre></div><p>Commit and then then push the changes to Github:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git commit
+</span></span><span style="display:flex;"><span>$ git push
+</span></span></code></pre></div><h2 class="heading" id="create-and-clone-from-github">
+  Create and clone from Github
+  <a href="#create-and-clone-from-github">#</a>
+</h2>
+<p>If you create a repository on github.com and initialize it with some files,
+like the readme, gitignore or license, the easiest way to get a local copy to
+work with is git clone. This will create a folder with the repository name:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git clone git@github.com:&lt;username&gt;/&lt;repository&gt;.git
+</span></span></code></pre></div><p>If for some reason you want the local folder to be called something other than
+the repository name, that can be added as a parameter:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git clone git@github.com:&lt;username&gt;/&lt;repository&gt;.git &lt;new-folder-name&gt;
+</span></span></code></pre></div><p>A cloned repository like this has already been initialized so the <code>git init</code>
+command is not needed when working with it.</p>
+<h2 class="heading" id="set-up-ssh-keys-and-add-them-to-your-account">
+  Set up SSH keys and add them to your account
+  <a href="#set-up-ssh-keys-and-add-them-to-your-account">#</a>
+</h2>
+<p>If you don&rsquo;t have a suitable SSH key already, create one first:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ssh-keygen -t ed25519 -C <span style="color:#666;font-style:italic">&#34;your_name@example.com&#34;</span>
+</span></span></code></pre></div><p>The -C parameter lets you add a comment to the key, and here we set it to an
+email address but it can be anything. If not set it will be something like
+&ldquo;username@DESKTOP-E7B5H2C&rdquo; depending on your system. Accept the default name
+for the key and set a strong password for it.</p>
+<p>Start the ssh-agent which will remember your password so you don&rsquo;t have to
+type it every time you use SSH:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">eval</span> <span style="color:#666;font-style:italic">`</span>ssh-agent -s<span style="color:#666;font-style:italic">`</span>
+</span></span></code></pre></div><p>Next add your key and password to ssh-agent:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>ssh-add ~/.ssh/id_ed25519
+</span></span></code></pre></div><p>Note that ssh-agent has to be restarted after each reboot and the key with
+password has to be added every time ssh-agent is started.</p>
+<p>Finally, copy the contents of the <code>id_ed25519.pub</code> file and add it to Github.
+If you see <code>-----BEGIN OPENSSH PRIVATE KEY-----</code> in the file, it&rsquo;s the
+wrong one, that one should be kept private. In Github, SSH keys are found
+under profile and then &ldquo;SSH and GPG keys&rdquo; in the menu on the left. Click &ldquo;New
+SSH Key&rdquo;, give it a title, and add they key in the &ldquo;key&rdquo; input field.</p>
+<h2 class="heading" id="working-with-branches">
+  Working with branches
+  <a href="#working-with-branches">#</a>
+</h2>
+<p>Create a new branch locally from the point you are at now. Basically take a
+copy of current status:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git branch &lt;new-branch-name&gt;
+</span></span></code></pre></div><p>List all available branches:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git branch -a
+</span></span></code></pre></div><p>Switch to the new branch to make changes to it:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git checkout &lt;new-branch-name&gt;
+</span></span></code></pre></div><p>After changes have been added and committed, push them to Github:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git push origin &lt;new-branch-name&gt;
+</span></span></code></pre></div><p>Now the local changes are stored on Github, but there is no &ldquo;connection&rdquo;
+between the local branch and Github so it can&rsquo;t easily be pulled down again.
+To set tracking information so they are connected:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git branch --set-upstream-to=origin/&lt;new-branch-name&gt; &lt;new-branch-name&gt;
+</span></span></code></pre></div><p>Now this new branch can be modified and changes pushed as easily as for main.</p>
+<p>Doing <code>git push</code> on a local branch before tracking information is set gives an
+error message and doesn&rsquo;t work. It might be possible to combine the two
+commands above, <code>git push</code> and <code>git branch --set-upstream</code> with just this:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git push --set-upstream origin &lt;new-branch-name&gt;
+</span></span></code></pre></div><p>I have not tried the above yet, I just found it somewhere but unfortunately
+don&rsquo;t remember where any more.</p>
+<p>In case if there has been changes on main that needs to be merged into a
+feature branch, make sure main is updated locally first. Then check out the
+feature branch and merge changes from main into it:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git merge main
+</span></span></code></pre></div>
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>

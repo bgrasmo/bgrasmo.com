@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    Just the Git and Github commands | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20241223-git-github-commands/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20241223-git-github-commands/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="Just the Git and Github commands">
+  <meta property="og:description" content="Just the commands for working with Git and Github, see learning git and Github post for details">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-23T21:00:47+01:00">
+    <meta property="article:modified_time" content="2024-12-23T21:38:04+01:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts/" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index/" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about/" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now/" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses/" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags/" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Just the Git and Github commands</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-12-23T21:00:47&#43;01:00">First published: 2024-12-23 21:00:47</time>
+      
+      <br>
+      
+      
+      
+      <time datetime="2024-12-23T21:38:04&#43;01:00">Last updated: 2024-12-23 21:38:04</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <h1 class="heading" id="working-with-git-and-github">
+  Working with Git and Github
+  <a href="#working-with-git-and-github">#</a>
+</h1>
+<p>Just the commands. A post with more explanation of what the commands do is available <a href="/posts/20241223-learning-git-github/">here</a>.</p>
+<h2 class="heading" id="git-configuration">
+  Git configuration
+  <a href="#git-configuration">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global user.name <span style="color:#666;font-style:italic">&#34;Your Name&#34;</span>
+</span></span><span style="display:flex;"><span>$ git config --global user.email your-email@example.com
+</span></span><span style="display:flex;"><span>$ git config --global core.editor <span style="color:#666;font-style:italic">&#34;code --wait&#34;</span>
+</span></span></code></pre></div><p>Set how lin endings should be handled depending on system:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#888;font-style:italic"># Windows:</span>
+</span></span><span style="display:flex;"><span>&gt; git config --global core.autocrlf <span style="font-weight:bold;font-style:italic">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># Mac/Linux:</span>
+</span></span><span style="display:flex;"><span>$ git config --global core.autocrlf input
+</span></span></code></pre></div><p>View global git config</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global -e
+</span></span></code></pre></div><h2 class="heading" id="set-up-a-git-project-to-use-with-github">
+  Set up a Git project to use with Github
+  <a href="#set-up-a-git-project-to-use-with-github">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ <span style="font-weight:bold;font-style:italic">echo</span> <span style="color:#666;font-style:italic">&#34;# My new repository&#34;</span> &gt;&gt; README.md
+</span></span><span style="display:flex;"><span>$ git init
+</span></span><span style="display:flex;"><span>$ git add .
+</span></span><span style="display:flex;"><span>$ git commit -m <span style="color:#666;font-style:italic">&#34;Initial commit&#34;</span>
+</span></span><span style="display:flex;"><span>$ git branch -M main
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># Create empty repository on Github before the next command</span>
+</span></span><span style="display:flex;"><span>$ git remote add origin git@github.com:&lt;username&gt;/&lt;repository&gt;.git
+</span></span><span style="display:flex;"><span>$ git push -u origin main
+</span></span></code></pre></div><p>Check status, add files, commit and push changes:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git status
+</span></span><span style="display:flex;"><span>$ git add .
+</span></span><span style="display:flex;"><span>$ git commit
+</span></span><span style="display:flex;"><span>$ git push
+</span></span></code></pre></div><h2 class="heading" id="create-and-clone-from-github">
+  Create and clone from Github
+  <a href="#create-and-clone-from-github">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git clone git@github.com:&lt;username&gt;/&lt;repository&gt;.git
+</span></span><span style="display:flex;"><span>$ git clone git@github.com:&lt;username&gt;/&lt;repository&gt;.git &lt;new-folder-name&gt;
+</span></span></code></pre></div><h2 class="heading" id="set-up-ssh-keys-and-add-them-to-your-account">
+  Set up SSH keys and add them to your account
+  <a href="#set-up-ssh-keys-and-add-them-to-your-account">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ssh-keygen -t ed25519 -C <span style="color:#666;font-style:italic">&#34;your_name@example.com&#34;</span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">eval</span> <span style="color:#666;font-style:italic">`</span>ssh-agent -s<span style="color:#666;font-style:italic">`</span>
+</span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_ed25519
+</span></span></code></pre></div><h2 class="heading" id="working-with-branches">
+  Working with branches
+  <a href="#working-with-branches">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git branch &lt;new-branch-name&gt;
+</span></span><span style="display:flex;"><span>$ git branch -a
+</span></span><span style="display:flex;"><span>$ git checkout &lt;new-branch-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># Either</span>
+</span></span><span style="display:flex;"><span>$ git push origin &lt;new-branch-name&gt;
+</span></span><span style="display:flex;"><span>$ git branch --set-upstream-to=origin/&lt;new-branch-name&gt; &lt;new-branch-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># or</span>
+</span></span><span style="display:flex;"><span>$ git push --set-upstream origin &lt;new-branch-name&gt;
+</span></span></code></pre></div><p>Merge changes from main into a feature branch, having checked out the feature branch first:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git merge main
+</span></span></code></pre></div>
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>
