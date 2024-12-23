@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="https://bgrasmo.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Commands to install and configure wireguard</title>
+      <link>https://bgrasmo.com/posts/20241223-wireguard-commands/</link>
+      <pubDate>Mon, 23 Dec 2024 16:09:18 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241223-wireguard-commands/</guid>
+      <description>Just the commands to install and configure wireguard</description>
+    </item>
+    <item>
       <title>Install and configure wireguard</title>
       <link>https://bgrasmo.com/posts/20241204-wireguard/</link>
       <pubDate>Wed, 04 Dec 2024 19:04:35 +0100</pubDate>
@@ -47,7 +54,7 @@
       <link>https://bgrasmo.com/article-index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://bgrasmo.com/article-index/</guid>
-      <description>&lt;h3 class=&#34;heading&#34; id=&#34;the-beginning&#34;&gt;&#xA;  The beginning&#xA;  &lt;a href=&#34;#the-beginning&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Server setup: &lt;a href=&#34;https://bgrasmo.com/posts/20241127-first-post/&#34;&gt;First post&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h3 class=&#34;heading&#34; id=&#34;the-beginning&#34;&gt;&#xA;  The beginning&#xA;  &lt;a href=&#34;#the-beginning&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;An overview of what I&amp;rsquo;m using to run this site, as well as some server tools:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The server setup in general: &lt;a href=&#34;https://bgrasmo.com/posts/20241127-first-post/&#34;&gt;First post&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cloudflare setup to have port 80 and 443 closed: &lt;a href=&#34;https://bgrasmo.com/posts/20241201-cloudflared/&#34;&gt;cloudflared&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;SNMP and RRDtool setup to watch some server statistics: &lt;a href=&#34;https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/&#34;&gt;SNMP and RRDtool&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Now</title>
