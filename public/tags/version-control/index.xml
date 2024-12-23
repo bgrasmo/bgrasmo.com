@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version Control on bgrasmo.com blog</title>
+    <link>https://bgrasmo.com/tags/version-control/</link>
+    <description>Recent content in Version Control on bgrasmo.com blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Dec 2024 22:03:32 +0100</lastBuildDate>
+    <atom:link href="https://bgrasmo.com/tags/version-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Just the Git and Github commands</title>
+      <link>https://bgrasmo.com/posts/20241223-git-github-commands/</link>
+      <pubDate>Mon, 23 Dec 2024 21:00:47 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241223-git-github-commands/</guid>
+      <description>Just the commands for working with Git and Github, see learning git and Github post for details</description>
+    </item>
+    <item>
+      <title>Learning Git and Github</title>
+      <link>https://bgrasmo.com/posts/20241223-learning-git-github/</link>
+      <pubDate>Mon, 23 Dec 2024 20:02:13 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241223-learning-git-github/</guid>
+      <description>My notes when learning Git and Github for version control of files</description>
+    </item>
+  </channel>
+</rss>

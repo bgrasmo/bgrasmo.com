@@ -2,59 +2,89 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bgrasmo.com/tags/git/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/github/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
     <loc>https://bgrasmo.com/posts/20241223-git-github-commands/</loc>
-    <lastmod>2024-12-23T21:44:15+01:00</lastmod>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/posts/</loc>
-    <lastmod>2024-12-23T21:44:15+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/20241223-learning-git-github/</loc>
-    <lastmod>2024-12-23T21:32:29+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/20241223-wireguard-commands/</loc>
-    <lastmod>2024-12-23T16:43:47+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/20241204-wireguard/</loc>
-    <lastmod>2024-12-23T16:43:47+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/20241201-cloudflared/</loc>
-    <lastmod>2024-12-07T18:02:37+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/</loc>
-    <lastmod>2024-12-07T18:02:37+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/caddy/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/cloudflare/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/firewall/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/20241127-first-post/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/intro/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/linux/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/nftables/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/setup/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/version-control/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/20241223-learning-git-github/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/20241223-wireguard-commands/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/vpn/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/wg/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/wg-quick/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/wireguard/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/20241204-wireguard/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/cloudflare/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/cloudflared/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/20241201-cloudflared/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/rrdtool/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/snmp/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/caddy/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/firewall/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/20241127-first-post/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/intro/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/linux/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/nftables/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/setup/</loc>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/ubuntu/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/vps/</loc>
-    <lastmod>2024-12-15T13:24:46+01:00</lastmod>
+    <lastmod>2024-12-23T22:03:32+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/about/</loc>
     <lastmod>2024-12-07T18:02:37+01:00</lastmod>

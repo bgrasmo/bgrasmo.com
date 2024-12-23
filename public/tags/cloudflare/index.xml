@@ -6,14 +6,21 @@
     <description>Recent content in Cloudflare on bgrasmo.com blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Dec 2024 13:24:46 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2024 22:03:32 +0100</lastBuildDate>
     <atom:link href="https://bgrasmo.com/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudflared</title>
+      <link>https://bgrasmo.com/posts/20241201-cloudflared/</link>
+      <pubDate>Sun, 01 Dec 2024 11:07:01 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20241201-cloudflared/</guid>
+      <description>Installing cloudflared for secure traffic to cloudflare and hiding our server</description>
+    </item>
     <item>
       <title>First Post</title>
       <link>https://bgrasmo.com/posts/20241127-first-post/</link>
       <pubDate>Wed, 27 Nov 2024 17:16:55 +0100</pubDate>
       <guid>https://bgrasmo.com/posts/20241127-first-post/</guid>
-      <description>We are live, weclome! Here is a short introduction to this page as well as how I set it up and are running it</description>
+      <description>We are live, welcome! Here is a short introduction to this page as well as how I set it up and are running it</description>
     </item>
   </channel>
 </rss>
