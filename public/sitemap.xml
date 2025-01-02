@@ -2,8 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bgrasmo.com/posts/20250102-blogging-with-hugo/</loc>
+    <lastmod>2025-01-02T18:46:31+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/hugo/</loc>
+    <lastmod>2025-01-02T18:46:31+01:00</lastmod>
+  </url><url>
     <loc>https://bgrasmo.com/posts/</loc>
-    <lastmod>2025-01-01T20:04:57+01:00</lastmod>
+    <lastmod>2025-01-02T18:46:31+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/tags/</loc>
+    <lastmod>2025-01-02T18:46:31+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/security/</loc>
     <lastmod>2025-01-01T20:04:57+01:00</lastmod>
@@ -12,9 +21,6 @@
     <lastmod>2025-01-01T20:04:57+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/posts/20250101-ssh-hardening/</loc>
-    <lastmod>2025-01-01T20:04:57+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/tags/</loc>
     <lastmod>2025-01-01T20:04:57+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/git/</loc>
