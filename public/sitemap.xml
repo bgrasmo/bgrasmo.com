@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bgrasmo.com/posts/20250102-timesinks-parking-space/</loc>
+    <lastmod>2025-01-02T20:47:06+01:00</lastmod>
+  </url><url>
+    <loc>https://bgrasmo.com/posts/</loc>
+    <lastmod>2025-01-02T20:47:06+01:00</lastmod>
+  </url><url>
     <loc>https://bgrasmo.com/posts/20250102-blogging-with-hugo/</loc>
     <lastmod>2025-01-02T18:46:31+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/hugo/</loc>
-    <lastmod>2025-01-02T18:46:31+01:00</lastmod>
-  </url><url>
-    <loc>https://bgrasmo.com/posts/</loc>
     <lastmod>2025-01-02T18:46:31+01:00</lastmod>
   </url><url>
     <loc>https://bgrasmo.com/tags/</loc>

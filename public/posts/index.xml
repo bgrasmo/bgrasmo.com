@@ -6,8 +6,15 @@
     <description>Recent content in Posts on bgrasmo.com blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jan 2025 18:46:31 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jan 2025 20:47:06 +0100</lastBuildDate>
     <atom:link href="https://bgrasmo.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parking space for timesinks</title>
+      <link>https://bgrasmo.com/posts/20250102-timesinks-parking-space/</link>
+      <pubDate>Thu, 02 Jan 2025 19:32:24 +0100</pubDate>
+      <guid>https://bgrasmo.com/posts/20250102-timesinks-parking-space/</guid>
+      <description>My parking space for timesinks which I might get back to later</description>
+    </item>
     <item>
       <title>Blogging With Hugo</title>
       <link>https://bgrasmo.com/posts/20250102-blogging-with-hugo/</link>
