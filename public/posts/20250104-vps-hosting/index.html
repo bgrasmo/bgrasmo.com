@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    VPS hosting providers | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20250104-vps-hosting/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20250104-vps-hosting/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="VPS hosting providers">
+  <meta property="og:description" content="Some notes on VPS hosting providers I have tried and why I use a VPS">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-04T17:08:06+01:00">
+    <meta property="article:modified_time" content="2025-01-04T22:13:38+01:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts/" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index/" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about/" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now/" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses/" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags/" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">VPS hosting providers</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-04T17:08:06&#43;01:00">First published: 2025-01-04 17:08:06</time>
+      
+      <br>
+      
+      
+      
+      <time datetime="2025-01-04T22:13:38&#43;01:00">Last updated: 2025-01-04 22:13:38</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#digitalocean">Digitalocean</a></li>
+    <li><a href="#hetzner">Hetzner</a></li>
+    <li><a href="#openbsdamsterdam">OpenBSD.Amsterdam</a></li>
+    <li><a href="#1984hosting">1984.hosting</a></li>
+    <li><a href="#lowendtalk">Lowendtalk</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="introduction">
+  Introduction
+  <a href="#introduction">#</a>
+</h2>
+<p>I am using a VPS, a Virtual Private Server, hosted by someone other than the
+big cloud providers like Amazon and Google for a couple of reasons. First
+of all I only looked at Amazon and Google briefly, and didn&rsquo;t really
+understand their offering. I realized later that I should have looked in the
+&ldquo;compute&rdquo; category, and not their entire product catalogue to find what I
+wanted, but that is another story. The second reason is cost, or more
+correctly, predictability of cost.</p>
+<p>With the more traditional VPS providers, you normally pay for usage per the
+hour up to a given max, which is the specified monthly cost. So you get the
+benefit of only paying for what you use, if you spin up a server for only a
+couple of days to test something you only pay for those hours, but you also
+only pay the max amount of the plan should you forget to turn it off again.
+Another benefit is that if something happens like a process running wild and
+hogging all the available CPU, you still only pay the monthly cost for the
+plan. Now you might get your plan cancelled or available CPU throttled if it
+happens a lot, but the cost is given.</p>
+<p>The exception is outgoing bandwidth of which there is normally a given amount
+included in the plan. It should for most cases be sufficient, it is for sure
+for my low traffic pages, but obviously your needs are probably different from
+mine. If you exceed whatever outgoing amount is included, it seems 1000 GB or
+1 TB is standard, then you will have to pay for the extra usage. Fortunately
+data usage is not prohibitively expensive, for Digitalocean it is currently
+$10 per extra terrabyte of outgoing data, so you&rsquo;re probably not going to get
+a surprise bill of thousands or even tens of thousands of dollars one month.</p>
+<h2 class="heading" id="digitalocean">
+  Digitalocean
+  <a href="#digitalocean">#</a>
+</h2>
+<p>The provider I have the most experience with is <a href="https://digitalocean.com/">Digitalocean</a>.
+They have a decent amount of physical locations, and it&rsquo;s nice to get one
+close to you to reduce lag when SSH&rsquo;ing into it. They mostly support Linux now
+unfortunately, and are a little more expensive than other providers, but in my
+experience they provided a very stable service with no downtime. Another
+advantage is their cloud firewall which you can put in front of your server,
+so most of the persistent bot scans for open ports and services never reaches
+your server. I used them when they supported FreeBSD, but they unfortunately
+stopped supporting it in 2022. If you had a FreeBSD server with them at that
+time you could continue running it though, and can still today, but they don&rsquo;t
+let you install FreeBSD on a new droplet. (At least not easily.)</p>
+<p>Another advantage is that you can quickly spin up a server in one of their
+locations, delete it when not needed and only pay for the time it was running.</p>
+<p>One disadvantage of Digitalocean is that they don&rsquo;t support IPv6 properly. Yes
+you can get IPv6 addresses from them, but you only get 10 addresses! The
+standard for IPv6 is that a /64, or 18,446,744,073,709,551,616 addresses is the
+minimal allocation, however wasteful that might seem. Normally you would be
+assigned something like this: <code>2a03:1234:5678:9abc::/64</code> which we can expand
+to this for the addresses you can use:</p>
+<pre tabindex="0"><code>From: 2a03:1234:5678:9abc:0000:0000:0000:0000
+To:   2a03:1234:5678:9abc:ffff:ffff:ffff:ffff
+</code></pre><p>And anything in between those. See how the first four groups of numbers are
+the same? They are considered one subnet, and the smallest one in IPv6, so
+anything after that is normally up to you to use however you like.</p>
+<p>This has a practical disadvantage if using Docker for instance. Docker has
+quite strict limits on how many images you can pull down per day if you are
+not logged in and are not a paying customer. In order to identify you when you
+are not logged in they use your IP address. Can you see where this is going
+yet? Given &ldquo;everyone&rdquo; considers anything starting with <code>2a03:1234:5678:9abc:</code>
+to be the same customer, while Digitalocean uses <code>2a03:1234:5678:9abc:</code> for
+all their customers, you probably won&rsquo;t be able to pull docker images using
+IPv6 on Digitalocean, as resource limits have been exhausted by someone else
+already. The solution then is to either create and account and log in, or
+only pull images with IPv4. And to be absolutely correct, they don&rsquo;t have one
+/64 for <strong>all</strong> their customers, but probably one /64 per site. But still. It
+might be nit-picking, but I was surprised to learn about this and experienced
+the consequence of it myself.</p>
+<p>I digress. Back to VPS hosting providers.</p>
+<h2 class="heading" id="hetzner">
+  Hetzner
+  <a href="#hetzner">#</a>
+</h2>
+<p>The provider I am using is <a href="https://hetzner.com/">Hetzner</a>. They are quite
+strict about who can become their customer, as is their perogative. I think
+that is nice as it keeps the abusers out and it lets them provide a very good
+and stable service cheaper than others. On Digitalocean I can get a single AMD
+CPU, 1GB RAM, 25 GB disk and 1TB transfer for $7 a month. (Taxes will be added
+to that if applicable.) On Hetzner I can get 2 AMD CPUs, 2GB RAM, 40 GB disk
+and 20TB transfer (!) for €4.35/month. Again taxes will be added to that
+if applicable. Hetzner also has the option to not have an IPv4 address and
+save €0.5/month if you don&rsquo;t need it. They also gives you a full /64 IPv6
+subnet to use, avoiding the docker problems I experienced on Digitalocean.</p>
+<p>Hetzner also provides a cloud firewall, preventing all unwanted traffic from
+reaching your server. I log everything that reaches closed ports on my server
+and for both Digitalocean and Hetzner, those logs are empty. Nice!</p>
+<p>Hetzner is also extremely stable, and I&rsquo;ve experience no downtime for the 4
+months or so I&rsquo;ve been a customer there. My server has obviously been down
+during those 4 months, but that is my own doing due to kernel updates or
+similar.</p>
+<p>Hetzner has the same advatange as Digitalocean in that you can quickly spin up
+a server to test something, take it down again and only pay for the time you
+had it running.</p>
+<h2 class="heading" id="openbsdamsterdam">
+  OpenBSD.Amsterdam
+  <a href="#openbsdamsterdam">#</a>
+</h2>
+<p>If you are interested in running something other than Linux I can recommend
+OpenBSD. They probably have the best man-pages of all for one thing and given
+their focus on security, I also feel a little more confident experimenting
+with different services when using OpenBSD.</p>
+<p>Enter <a href="https://openbsd.amsterdam/">OpenBSD.Amsterdam</a></p>
+<p>They specialize in OpenBSD and basically only have one plan where you get 1
+CPU, 1 GB RAM and 50 GB disk for €69/year. Network usage is unlimited, but
+fair-share, so be nice to your neighbours! You can get extra RAM or disk by
+paying extra for it.</p>
+<p>What might be considered a disadvantage is that you have to pay for a full
+year up front, so if you just want to try OpenBSD and see if it is for you
+this might not be the service to try.</p>
+<p>Another disadvantage is that OpenBSD feels kind of slow to use and software
+support is limited. Do you want to try <a href="https://bun.sh/">bun</a> for instance?
+Good luck with that! Zig, which is the language Bun is built in is not very
+well supported on OpenBSD and so trying to compile things was way over my
+head.</p>
+<p>Want to try something a little less experimental, like <a href="https://deno.com">Deno</a>?
+At the time of this writing, Deno 2 has been out for quite a while, but the
+latest package in OpenBSD is version 1.45.5. If you want another version you
+have to try and compile it yourself.</p>
+<p>Even <a href="https://nodejs.org/">Nodejs</a>
+is not well supported with only version 20.17 being available. Want to use
+<code>nvm</code> to manage Node installations? Well, OpenBSD isn&rsquo;t supported as a compile-target
+for Node officially, so you have to try and compile another version
+yourself. Your mileage may vary of course, but I was not able to do it. While
+you obviously can run Node 20.17 on OpenBSD, it feels kind of sluggish
+compared to running it on Linux, where it feels &ldquo;snappy&rdquo;, meaning starting
+and responding immediately. I&rsquo;ve performed the same task on OpenBSD and
+similarly specced Ubuntu Linux server, which was to read and parse some text
+files and insert the data into a sqlite3 database. On my OpenBSD server it
+took 2 minutes real time, while on Ubuntu it took around 40 seconds. So that&rsquo;s
+what I mean when I say OpenBSD feels a little slow to use.</p>
+<p>Also, is OpenBSD really more secure than other operating systems? Some might
+disagree, see <a href="https://isopenbsdsecu.re/">this</a> for more information. My
+personal guess is that it definately is more obscure, and what I&rsquo;ve seen is
+that software written to be secure on OpenBSD isn&rsquo;t really portable to other
+operating systems, given their own special sauce way of doing things. <a href="https://man.openbsd.org/pledge.2">Pledge</a>
+for instance, which is a system call used to state what system calls the
+program use and need access to, which means other (dangerous) system calls
+won&rsquo;t be available to the program. It is a good thing, for sure, but if it
+only exists on OpenBSD, programs making use of it can&rsquo;t easily run on other
+operating systems.</p>
+<p>OpenBSD comes with something called <a href="https://man.openbsd.org/relayd.8">relayd</a> which
+is used to accept incomming connections, do filtering, and then forward the
+connection to their destination. This is needed if you want to use OpenBSD
+<a href="https://man.openbsd.org/httpd.8">httpd</a> to serve web-pages and set headers
+like CSP in the response, as httpd does not support setting said headers
+itself. I&rsquo;ve found this combination works quite well, though the same can
+probably be achived with just nginx. I have not tried to use Caddy with
+OpenBSD, as it looks less supported than nginx which seems to <a href="https://obsd.solutions/en/blog/2022/02/18/openbsd-httpd-70-web-server/">have been supported</a>
+a while ago.</p>
+<p>On the positive side, OpenBSD.Amsterdam provide the best console experience of
+them all, or at least I think so! You access the console of your server by
+SSH&rsquo;ing into the host, which also runs OpenBSD by the way, and then use <code>cu</code>
+to access it. Other providers mostly have a web-console where you have to
+access the console from their web pages.</p>
+<p>OpenBSD.Amsterdam also provide a very stable service. You can
+see their server CPU and network graphs <a href="https://openbsd.amsterdam/servers.html">here</a>
+and that also shows their servers uptime. Looking at the OpenBSD <a href="https://www.openbsd.org/errata76.html">errata</a>
+page, there aren&rsquo;t many issues at all, and so there is no need to reboot to
+update. They recently, on 2024-12-29 updated from OpenBSD 7.5 to 7.6 which is
+why the uptime is so low now. Before the update it was 220+ days.</p>
+<h2 class="heading" id="1984hosting">
+  1984.hosting
+  <a href="#1984hosting">#</a>
+</h2>
+<p><a href="https://1984.hosting/">1984.hosting</a> is a provider located in Iceland, focused
+on powering their service using only green energy as well as having a
+particular focus on privacy. They mainly provide various Linux distributions
+out of the box, but once you get your server installed, you can go to the
+recovery options and choose a number of other operating systems, like OpenBSD.</p>
+<p>You will have to pay for the full month up front, and located in Iceland, the
+latency to them was a little high for me so that is why I&rsquo;m not using their
+services anymore. (The lag in SSH was noticable.) The 3-4 months I had a
+server there however, it was perfectly stable.</p>
+<p>There was something a little strange with the Ubuntu mirror they had set up
+as default, though. On July 1st when the news of the SSH/XZ vulnerability
+broke, there were no updates from said mirror. Checking the Ubuntu mirror
+pages, but mirror had supposedly been checked only a few hours ago, and was
+said to be up to date. This persisted for days. I got no response what so ever
+from neither 1984 themselves, nor the people managing the mirror. I resolved
+the issue by switching to a different mirror, but found it disconcerning that
+Ubuntu supposedly checks their mirrors, says they are ok and up to date, while
+they really aren&rsquo;t. Especially when it comes to security updates! I did check
+the mirror manually many times and could confirm it didn&rsquo;t have the latest
+openssh packages available.</p>
+<p>The last part is maybe not so much the fault of 1984.hosting, but again they
+had selected a local mirror that wasn&rsquo;t being updated and did not respond when
+asked about it.</p>
+<p>Another thing to note is that to cancel the service, per their terms they
+require at least 16 days notice before the service would be renwed, with a
+mail with a given subject sent to their billing address. The service will then
+be shut down when the period you have paid for ends.</p>
+<h2 class="heading" id="lowendtalk">
+  Lowendtalk
+  <a href="#lowendtalk">#</a>
+</h2>
+<p>Moving on to perhaps more alternative territory, I discovered a page called
+<a href="https://lowendtalk.com/categories/offers">Lowendtalk</a> which is a forum for
+various companies offering VPS services. What they have in common is that
+their services are very cheap, some even extremely so. From this page I
+managed to get a deal for a 1 CPU, 1GB RAM, 10 GB disk for only €5 for a whole
+year! Yes, that is less than €0.5 per month! Sure, it isn&rsquo;t fast and disk is
+limited, but it is located in one of the Hetzner datacentres and has been
+100% stable since I got it a couple of months ago. While I won&rsquo;t use it for
+anything &ldquo;serious&rdquo;, it is perfect for experimenting with.</p>
+<p>Be aware when buying anything here though, as terms vary wildly and support
+staff, if there even is any, also varies a lot. One server I bought went down
+a mere 12 hours after I set it up, and the provider was not aware. It was not
+untill I, and probably a few others, pestered them about it that they noticed
+they had a hardware failure and moved us over to a different node. So for my
+first 24 hours of being a customer of this company, my service had been down
+for 12 hours, or only 50% uptime. It has been perfectly stable since then
+though so I was just unlucky with the box. Their support is extremely slow,
+and they keep claiming they have a huge number of tickets to go through, which
+I consider a bit of a red flag. If their services were stable, and they had
+decent self-support pages, I don&rsquo;t think they would be overloaded with tickets.</p>
+<p>With another provider I tried I experienced 3 crashes during the first 14
+days, each leading to catastrophic disk corruption so I had to rebuild my
+server from scratch each time. Accoring to their terms they provide no
+uptime guarantee (!), not even a measly 95% or even 90%, so in theory they
+could let me install the server then shut it down and run away with my money.
+They wouldn&rsquo;t be in business if they did that though, but just be aware you
+have no guarantees of the service actually being available when you want/need
+it.</p>
+<p>These providers also seem to be provided by people working a regular 9-5, so
+if anything happens outside those hours, you&rsquo;ll have to wait for support.</p>
+<p>Having said all that though, you can get some fantastic deals here, so if you
+just want something to experiment with, I don&rsquo;t think you can do better. Given
+you can get a quite powerful server for maybe only $15 total for a whole year,
+I&rsquo;m not sure I have much grounds to complain.</p>
+<p>So I&rsquo;m not naming any names here, I don&rsquo;t want to shame anyone as I could just
+have been unlucky, and like I said, you can get a server extremely cheap.
+Just do your due dilligence, read their terms, see other peoples experiences
+in their threads and decide what is good enough for you.</p>
+<p>To finish this post I can share a youtube video I came across titled
+<a href="https://www.youtube.com/watch?v=F-9KWQByeU0">Setting up a production ready VPS is a lot easier than I though</a>
+by <a href="https://www.youtube.com/@dreamsofcode">Dreams of Code</a>. He&rsquo;s followed up with
+<a href="https://www.youtube.com/watch?v=fuZoxuBiL9o">docker stack is my new favorite way to deploy to a VPS</a>
+both of which I think is useful.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>
