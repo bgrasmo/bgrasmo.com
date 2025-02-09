@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+<title>
+    
+    I got distracted | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20250209-i-got-distracted/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20250209-i-got-distracted/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="I got distracted">
+  <meta property="og:description" content="I got distracted and time flies">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-09T17:40:08+01:00">
+    <meta property="article:modified_time" content="2025-02-09T21:42:05+01:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
+
+<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
+    crossorigin="anonymous" defer></script>
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts/" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index/" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about/" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now/" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses/" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags/" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">I got distracted</h1>
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-09T17:40:08&#43;01:00">First published: 2025-02-09 17:40:08</time>
+      
+      <br>
+      
+      
+      
+      <time datetime="2025-02-09T21:42:05&#43;01:00">Last updated: 2025-02-09 21:42:05</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pqconnect">PQConnect</a></li>
+    <li><a href="#rosenpass">Rosenpass</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="pqconnect">
+  PQConnect
+  <a href="#pqconnect">#</a>
+</h2>
+<p>Late last year I came across a <a href="https://x.com/hashbreaker/status/1872635448520286572">post on X</a>
+by <a href="https://en.wikipedia.org/wiki/Daniel_J._Bernstein">Daniel J. Bernstein</a>
+announcing something called <a href="https://pqconnect.net">PQConnect</a>. In brief it is software you
+can install on Linux that will create a post-quantum secure tunnel between
+clients and servers with this software installed. Post-quantum meaning
+cryptography that should be secure when powerful quantum computers that can
+break existing, traditional cryptography becomes available.</p>
+<p>This isn&rsquo;t something I think I need, but I find it interesting and wanted to
+experiment with it.</p>
+<p>As mentioned, only Linux is supported today, but this was just released so
+I&rsquo;m sure support for more platforms will come later. I&rsquo;d like to see it
+supported on the BSDs I use, OpenBSD and FreeBSD as well, and hopefully in a
+ready to use package. Installing today consists of downloading a .tar.gz file,
+unpacking and running an install script, which in turn downloads more files.
+It is based on python, but it&rsquo;s not clear to me what it installs and where,
+so if I want to remove this at some point, I&rsquo;m not sure how to go about it.</p>
+<p>Another downside is that you would need to change your DNS setup by creating
+an entry with a hash PQConnect generates, like this:</p>
+<pre tabindex="0"><code>pq14ada0dcc8ebbb178ef954d6d48f108d83d78b3510cdaf79de7655b4c64da4240.example.com
+</code></pre><p>Then you would need to point your webserver like <a href="https://www.example.com">www.example.com</a> to this entry
+as a CNAME. And I guess it means it&rsquo;s not possible to access just <code>example.com</code>
+in the browser through PQConnect, since the domain itself can&rsquo;t be a CNAME.</p>
+<p>Another downside is that you need to set up your firewall to intercept DNS
+requests, so they go to the PQConnect client first, and if it finds the hash
+it will connect to the PQConnect server through the tunnel with a private
+address in the 10.43.0.0/24 range.</p>
+<p>Then whoever connects to your services through PQConnect will be seen as
+comming from this private 10.43 address, meaning it will be more difficult
+to identify and block abusers.</p>
+<p>Hopefully an option to still get the connecting public ip of the client will
+become available in the future.</p>
+<h2 class="heading" id="rosenpass">
+  Rosenpass
+  <a href="#rosenpass">#</a>
+</h2>
+<p>What I found to be more interesting, was that the PQConnect page mentioned
+some other software that supports post-quantum secure encryption, one of them
+being <a href="https://rosenpass.eu/">Rosenpass</a>.</p>
+<p>Rosenpass works by establishing a post-quantum secure tunnel between two hosts,
+and then uses that tunnel to transmit a pre-shared key. This key is then added
+to the Wireguard interfaces on both sides, thereby increasing the security of
+the Wireguard tunnel. The key is replaced every two minutes, meaning if someone
+was able to crack the standard Wireguard encryption and get a hold of a pre-
+shared key, they should only be able to decrypt about 2 minutes worth of data.
+Since the key exchange happens outside of Wireguard they should not be able to
+get the next key generated. This is the problem with transferring a pre-shared
+key through an existing Wireguard tunnel, if that was cracked they would be
+able to get the next key as well, and keep decrypting the data.</p>
+<p>Again this is something I probably don&rsquo;t need, but since I have a small
+Wireguard network, I thought I would try to implement it to experiment with
+and learn about. Rosenpass is only at version 0.2.2 so it&rsquo;s not production
+ready yet, and I did indeed encouter a few issues. Not to mention it became
+a little more tricky to get the firewalls set up properly and have traffic
+flowing through as it should. I probably made a mess of everything since I
+kept my existing Wireguard network as it was, and then added another network
+for Rosenpass. Using the <code>rp</code> helper tool that comes with Rosenpass, it
+automatically creates a new wireguard interface called rosenpass which is the
+one it protects by changing the pre-shared key. Another thing here is if the
+Rosenpass key exchange uses port 10000, the new interface will use port 10001,
+and this is not configurable.</p>
+<p>Then there were issues with listening on the correct interface, as well as
+traffic direction, who connects to who?</p>
+<p>And so time flies.</p>
+<p>A general downside to Wireguard I think, is that if you have not been able to
+generate and/or distribute the public keys correctly, packets will be silently
+dropped. While nice in that it doesn&rsquo;t advertise that there is a service
+listening on the port, it makes it a little hard to debug. Does traffic not go
+through because of a network or firewall issue, or is the problem with the keys?
+Then with the config you don&rsquo;t work with hostnames, but with hashes, as seen
+in my <a href="/posts/20241204-wireguard/">Wireguard</a> post, and you don&rsquo;t connect to
+hostnames either, but IP addresses. All of which makes it a little easy to make
+a mistake when configuring this.</p>
+<p>I feel I have learnt a lot through my trial and error though, so maybe I&rsquo;ll
+come back and detail my setup later.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+    </footer>
+
+    
+
+  </body>
+</html>
