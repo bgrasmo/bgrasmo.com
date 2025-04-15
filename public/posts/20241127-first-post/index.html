@@ -2,9 +2,21 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
@@ -15,6 +27,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
 
 <meta name="description" content=""/>
+
+
 
 <title>
     
@@ -51,11 +65,7 @@
 
 
 
-
-<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
-
-<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
-    crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="/assets/combined.min.382cc08a95c4aad2675a6ee420762c30aa5ce8938fe7055489b59c973a270c8a.css" media="all">
 
 
 
@@ -65,19 +75,31 @@
 
 
 
-  </head>
 
-  
 
-  
-  
-  
 
-  <body class="auto">
 
-    <div class="content">
-      <header>
-        
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
 
 <div class="header">
 
@@ -148,10 +170,10 @@
 
 </div>
 
-      </header>
+    </header>
 
-      <main class="main">
-        
+    <main class="main">
+      
 
 
 
@@ -213,7 +235,7 @@
   <div class="single-content">
     <h1 class="heading" id="we-are-live">
   We are live!
-  <a href="#we-are-live">#</a>
+  <a class="anchor" href="#we-are-live">#</a>
 </h1>
 <p>Welcome! This has been a long time in the making, so I am excited to finally have
 the site up and running.</p>
@@ -222,7 +244,7 @@ This is just the first edition and I plan on detailing a lot of this later, but
 for now I just want to get this out there.</p>
 <h2 class="heading" id="vps">
   VPS
-  <a href="#vps">#</a>
+  <a class="anchor" href="#vps">#</a>
 </h2>
 <p>I host this myself on a VPS I rent from Hetzner, running Ubuntu Linux as that is
 what I am most familiar with. I like using a VPS because then I also get to
@@ -230,27 +252,27 @@ tinker with the server, like setting up tools on it and configuring the
 firewall.</p>
 <h2 class="heading" id="firewall">
   Firewall
-  <a href="#firewall">#</a>
+  <a class="anchor" href="#firewall">#</a>
 </h2>
 <p>I use nftables as the firewall. I&rsquo;ve used OpenBSD and FreeBSD more &ldquo;seriously&rdquo;
 than I have used Linux, so nftables was the one that made the most sense to me
 as it seemed the most similar to what I already knew.</p>
 <h2 class="heading" id="caddy">
   Caddy
-  <a href="#caddy">#</a>
+  <a class="anchor" href="#caddy">#</a>
 </h2>
 <p>To serve the pages I use Caddy as it was quite nice and easy to set up. It also
 provides automatic https for your site if you need that. There are other ways
 of getting certificates for your site which I will get back to later.</p>
 <h2 class="heading" id="goaccess">
   Goaccess
-  <a href="#goaccess">#</a>
+  <a class="anchor" href="#goaccess">#</a>
 </h2>
 <p>To analyze the traffic logs from Caddy, I use Goaccess which produces nice
 reports right out of the box.</p>
 <h2 class="heading" id="cloudflare">
   Cloudflare
-  <a href="#cloudflare">#</a>
+  <a class="anchor" href="#cloudflare">#</a>
 </h2>
 <p>The domain was bought through cloudflare and are hosted by them, with the added
 bonus that they provide caching as well as some basic protection from attacks.
@@ -259,7 +281,7 @@ server to their network, which they send traffic through. That means I don&rsquo
 need to have the web ports open, making the actual server practically invisible.</p>
 <h2 class="heading" id="hugo">
   Hugo
-  <a href="#hugo">#</a>
+  <a class="anchor" href="#hugo">#</a>
 </h2>
 <p>Then finally the blogging software. I use Hugo which is a statis site generator,
 making it easy to host your site practically anywhere.</p>
@@ -279,7 +301,7 @@ setting these headers later as it&rsquo;s considered good practice. I just need 
 what to set and how to set it first, but I thought I would prepare for it already.</p>
 <h2 class="heading" id="deploying">
   Deploying
-  <a href="#deploying">#</a>
+  <a class="anchor" href="#deploying">#</a>
 </h2>
 <p>When building the site, I tell Hugo to publish to a designated directory:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ hugo -d ~/bgrasmo.com/public
@@ -295,7 +317,6 @@ if I can automate some of this.</p>
   </div>
 
   
-
 
   
 
@@ -314,11 +335,35 @@ if I can automate some of this.</p>
 </div>
 
 
-      </main>
-    </div>
+    </main>
+  </div>
 
-    <footer>
-      
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
 
     
     <p>Powered by
@@ -331,9 +376,11 @@ if I can automate some of this.</p>
     
 
 
-    </footer>
+  </footer>
 
-    
+  
+</body>
 
-  </body>
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
 </html>

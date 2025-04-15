@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="https://bgrasmo.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chore: Update theme</title>
+      <link>https://bgrasmo.com/posts/20250414-chore-update-theme/</link>
+      <pubDate>Mon, 14 Apr 2025 20:33:03 +0200</pubDate>
+      <guid>https://bgrasmo.com/posts/20250414-chore-update-theme/</guid>
+      <description>Chore: Update theme, fix breaking changes and merge conflicts</description>
+    </item>
+    <item>
       <title>I got distracted</title>
       <link>https://bgrasmo.com/posts/20250209-i-got-distracted/</link>
       <pubDate>Sun, 09 Feb 2025 17:40:08 +0100</pubDate>
@@ -103,14 +110,14 @@
       <link>https://bgrasmo.com/article-index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://bgrasmo.com/article-index/</guid>
-      <description>&lt;h3 class=&#34;heading&#34; id=&#34;the-beginning&#34;&gt;&#xA;  The beginning&#xA;  &lt;a href=&#34;#the-beginning&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;An overview of what I&amp;rsquo;m using to run this site, as well as some server tools:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The server setup in general: &lt;a href=&#34;https://bgrasmo.com/posts/20241127-first-post/&#34;&gt;First post&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cloudflare setup to have port 80 and 443 closed: &lt;a href=&#34;https://bgrasmo.com/posts/20241201-cloudflared/&#34;&gt;cloudflared&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;SNMP and RRDtool setup to watch some server statistics: &lt;a href=&#34;https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/&#34;&gt;SNMP and RRDtool&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h3 class=&#34;heading&#34; id=&#34;the-beginning&#34;&gt;&#xA;  The beginning&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#the-beginning&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;An overview of what I&amp;rsquo;m using to run this site, as well as some server tools:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The server setup in general: &lt;a href=&#34;https://bgrasmo.com/posts/20241127-first-post/&#34;&gt;First post&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cloudflare setup to have port 80 and 443 closed: &lt;a href=&#34;https://bgrasmo.com/posts/20241201-cloudflared/&#34;&gt;cloudflared&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;SNMP and RRDtool setup to watch some server statistics: &lt;a href=&#34;https://bgrasmo.com/posts/20241130-snmp-and-rrdtool/&#34;&gt;SNMP and RRDtool&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Now</title>
       <link>https://bgrasmo.com/now/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://bgrasmo.com/now/</guid>
-      <description>&lt;p&gt;This is a new concept to me, but I liked it so I will try it. This is an idea by&#xA;Derek Sivers which you can read more about here: &lt;a href=&#34;https://nownownow.com/about&#34;&gt;nownownow.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h4 class=&#34;heading&#34; id=&#34;right-now-i-am&#34;&gt;&#xA;  Right now I am:&#xA;  &lt;a href=&#34;#right-now-i-am&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Starting my blog, which is a lot more work than I had hoped&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I do hope I can get the server stuff out of the way so I can focus on what really interests me right now, which is development&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Learning programming, TypeScript/JavaScript for now, but I really want to learn more about Python, Go and Rust as well&lt;/li&gt;&#xA;&lt;li&gt;Listening to the Expanse series audiobooks&lt;/li&gt;&#xA;&lt;li&gt;Staying mostly indoors during weekdays as winter is here and it is cold and dark outside&lt;/li&gt;&#xA;&lt;li&gt;We&amp;rsquo;re reorganizing at work for the second time this year, and that has a higher mental cost than anticipated, so it reduces what I have the energy to get involved in&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;p&gt;This is a new concept to me, but I liked it so I will try it. This is an idea by&#xA;Derek Sivers which you can read more about here: &lt;a href=&#34;https://nownownow.com/about&#34;&gt;nownownow.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h4 class=&#34;heading&#34; id=&#34;right-now-i-am&#34;&gt;&#xA;  Right now I am:&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#right-now-i-am&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Starting my blog, which is a lot more work than I had hoped&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I do hope I can get the server stuff out of the way so I can focus on what really interests me right now, which is development&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Learning programming, TypeScript/JavaScript for now, but I really want to learn more about Python, Go and Rust as well&lt;/li&gt;&#xA;&lt;li&gt;Listening to the Expanse series audiobooks&lt;/li&gt;&#xA;&lt;li&gt;Staying mostly indoors during weekdays as winter is here and it is cold and dark outside&lt;/li&gt;&#xA;&lt;li&gt;We&amp;rsquo;re reorganizing at work for the second time this year, and that has a higher mental cost than anticipated, so it reduces what I have the energy to get involved in&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Uses</title>

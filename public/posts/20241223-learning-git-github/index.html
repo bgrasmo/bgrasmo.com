@@ -2,9 +2,21 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
@@ -15,6 +27,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
 
 <meta name="description" content=""/>
+
+
 
 <title>
     
@@ -48,11 +62,7 @@
 
 
 
-
-<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
-
-<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
-    crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="/assets/combined.min.382cc08a95c4aad2675a6ee420762c30aa5ce8938fe7055489b59c973a270c8a.css" media="all">
 
 
 
@@ -62,19 +72,31 @@
 
 
 
-  </head>
 
-  
 
-  
-  
-  
 
-  <body class="auto">
 
-    <div class="content">
-      <header>
-        
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
 
 <div class="header">
 
@@ -145,10 +167,10 @@
 
 </div>
 
-      </header>
+    </header>
 
-      <main class="main">
-        
+    <main class="main">
+      
 
 
 
@@ -195,13 +217,13 @@
   <div class="single-content">
     <h1 class="heading" id="working-with-git-and-github">
   Working with Git and Github
-  <a href="#working-with-git-and-github">#</a>
+  <a class="anchor" href="#working-with-git-and-github">#</a>
 </h1>
 <p>My notes for setting up Git and using it with Github.</p>
 <p>Edit: A post with just the commands is available <a href="/posts/20241223-git-github-commands/">here</a>.</p>
 <h2 class="heading" id="download-git">
   Download git
-  <a href="#download-git">#</a>
+  <a class="anchor" href="#download-git">#</a>
 </h2>
 <p>For Mac and windows, download Git from here: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
 For Windows, if you want to do any kind of scripting in Git bash select to install all unix tools, otherwise accept the default values.</p>
@@ -219,7 +241,7 @@ For Windows, if you want to do any kind of scripting in Git bash select to insta
 </span></span><span style="display:flex;"><span>$ doas pkg_add git
 </span></span></code></pre></div><h2 class="heading" id="git-configuration">
   Git configuration
-  <a href="#git-configuration">#</a>
+  <a class="anchor" href="#git-configuration">#</a>
 </h2>
 <p>In a terminal, set up name and email so people know who made the changes:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global user.name <span style="color:#666;font-style:italic">&#34;Your Name&#34;</span>
@@ -252,7 +274,7 @@ added CR, remove it when pushing to the repository.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global -e
 </span></span></code></pre></div><h2 class="heading" id="set-up-a-git-project-to-use-with-github">
   Set up a Git project to use with Github
-  <a href="#set-up-a-git-project-to-use-with-github">#</a>
+  <a class="anchor" href="#set-up-a-git-project-to-use-with-github">#</a>
 </h2>
 <p>There are two ways to start a new project and use it with Github. Either
 initialize it locally first and then connect it to GitHub, or create it on
@@ -261,7 +283,7 @@ repository on Github, there will be instructions on how to connect to it. If
 readme, gitignore or license files are added, no instructions are shown.</p>
 <h2 class="heading" id="initialize-locally">
   Initialize locally
-  <a href="#initialize-locally">#</a>
+  <a class="anchor" href="#initialize-locally">#</a>
 </h2>
 <p>In a directory of your choosing, create the files you want to add to Github. At the very minimum create a readme file. From the commandline in a terminal:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ <span style="font-weight:bold;font-style:italic">echo</span> <span style="color:#666;font-style:italic">&#34;# My new repository&#34;</span> &gt;&gt; README.md
@@ -283,7 +305,7 @@ It will have a format like this: <code>git@github.com:&lt;username&gt;/&lt;repos
 </span></span><span style="display:flex;"><span>$ git push
 </span></span></code></pre></div><h2 class="heading" id="create-and-clone-from-github">
   Create and clone from Github
-  <a href="#create-and-clone-from-github">#</a>
+  <a class="anchor" href="#create-and-clone-from-github">#</a>
 </h2>
 <p>If you create a repository on github.com and initialize it with some files,
 like the readme, gitignore or license, the easiest way to get a local copy to
@@ -296,7 +318,7 @@ the repository name, that can be added as a parameter:</p>
 command is not needed when working with it.</p>
 <h2 class="heading" id="set-up-ssh-keys-and-add-them-to-your-account">
   Set up SSH keys and add them to your account
-  <a href="#set-up-ssh-keys-and-add-them-to-your-account">#</a>
+  <a class="anchor" href="#set-up-ssh-keys-and-add-them-to-your-account">#</a>
 </h2>
 <p>If you don&rsquo;t have a suitable SSH key already, create one first:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ssh-keygen -t ed25519 -C <span style="color:#666;font-style:italic">&#34;your_name@example.com&#34;</span>
@@ -318,7 +340,7 @@ under profile and then &ldquo;SSH and GPG keys&rdquo; in the menu on the left. C
 SSH Key&rdquo;, give it a title, and add they key in the &ldquo;key&rdquo; input field.</p>
 <h2 class="heading" id="working-with-branches">
   Working with branches
-  <a href="#working-with-branches">#</a>
+  <a class="anchor" href="#working-with-branches">#</a>
 </h2>
 <p>Create a new branch locally from the point you are at now. Basically take a
 copy of current status:</p>
@@ -350,7 +372,6 @@ feature branch and merge changes from main into it:</p>
 
   
 
-
   
 
   
@@ -368,11 +389,35 @@ feature branch and merge changes from main into it:</p>
 </div>
 
 
-      </main>
-    </div>
+    </main>
+  </div>
 
-    <footer>
-      
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
 
     
     <p>Powered by
@@ -385,9 +430,11 @@ feature branch and merge changes from main into it:</p>
     
 
 
-    </footer>
+  </footer>
 
-    
+  
+</body>
 
-  </body>
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
 </html>

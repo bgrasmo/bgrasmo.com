@@ -2,9 +2,21 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
@@ -15,6 +27,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
 
 <meta name="description" content=""/>
+
+
 
 <title>
     
@@ -48,11 +62,7 @@
 
 
 
-
-<link rel="stylesheet" href="/assets/combined.min.84ea60245fd0264779b741af3df914dd006a08a333a3d7646c34ce360ef58407.css" media="all">
-
-<script src="/js/main.a06250206b63cece0b8dbcea37160492bea6f48d0809c3dd5946ec8de5325093.js" integrity="sha256-oGJQIGtjzs4LjbzqNxYEkr6m9I0ICcPdWUbsjeUyUJM="
-    crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="/assets/combined.min.382cc08a95c4aad2675a6ee420762c30aa5ce8938fe7055489b59c973a270c8a.css" media="all">
 
 
 
@@ -62,19 +72,31 @@
 
 
 
-  </head>
 
-  
 
-  
-  
-  
 
-  <body class="auto">
 
-    <div class="content">
-      <header>
-        
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
 
 <div class="header">
 
@@ -145,10 +167,10 @@
 
 </div>
 
-      </header>
+    </header>
 
-      <main class="main">
-        
+    <main class="main">
+      
 
 
 
@@ -195,12 +217,12 @@
   <div class="single-content">
     <h1 class="heading" id="working-with-git-and-github">
   Working with Git and Github
-  <a href="#working-with-git-and-github">#</a>
+  <a class="anchor" href="#working-with-git-and-github">#</a>
 </h1>
 <p>Just the commands. A post with more explanation of what the commands do is available <a href="/posts/20241223-learning-git-github/">here</a>.</p>
 <h2 class="heading" id="git-configuration">
   Git configuration
-  <a href="#git-configuration">#</a>
+  <a class="anchor" href="#git-configuration">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global user.name <span style="color:#666;font-style:italic">&#34;Your Name&#34;</span>
 </span></span><span style="display:flex;"><span>$ git config --global user.email your-email@example.com
@@ -214,7 +236,7 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git config --global -e
 </span></span></code></pre></div><h2 class="heading" id="set-up-a-git-project-to-use-with-github">
   Set up a Git project to use with Github
-  <a href="#set-up-a-git-project-to-use-with-github">#</a>
+  <a class="anchor" href="#set-up-a-git-project-to-use-with-github">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ <span style="font-weight:bold;font-style:italic">echo</span> <span style="color:#666;font-style:italic">&#34;# My new repository&#34;</span> &gt;&gt; README.md
 </span></span><span style="display:flex;"><span>$ git init
@@ -231,20 +253,20 @@
 </span></span><span style="display:flex;"><span>$ git push
 </span></span></code></pre></div><h2 class="heading" id="create-and-clone-from-github">
   Create and clone from Github
-  <a href="#create-and-clone-from-github">#</a>
+  <a class="anchor" href="#create-and-clone-from-github">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git clone git@github.com:&lt;username&gt;/&lt;repository&gt;.git
 </span></span><span style="display:flex;"><span>$ git clone git@github.com:&lt;username&gt;/&lt;repository&gt;.git &lt;new-folder-name&gt;
 </span></span></code></pre></div><h2 class="heading" id="set-up-ssh-keys-and-add-them-to-your-account">
   Set up SSH keys and add them to your account
-  <a href="#set-up-ssh-keys-and-add-them-to-your-account">#</a>
+  <a class="anchor" href="#set-up-ssh-keys-and-add-them-to-your-account">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ ssh-keygen -t ed25519 -C <span style="color:#666;font-style:italic">&#34;your_name@example.com&#34;</span>
 </span></span><span style="display:flex;"><span><span style="font-weight:bold;font-style:italic">eval</span> <span style="color:#666;font-style:italic">`</span>ssh-agent -s<span style="color:#666;font-style:italic">`</span>
 </span></span><span style="display:flex;"><span>ssh-add ~/.ssh/id_ed25519
 </span></span></code></pre></div><h2 class="heading" id="working-with-branches">
   Working with branches
-  <a href="#working-with-branches">#</a>
+  <a class="anchor" href="#working-with-branches">#</a>
 </h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ git branch &lt;new-branch-name&gt;
 </span></span><span style="display:flex;"><span>$ git branch -a
@@ -261,7 +283,6 @@
   </div>
 
   
-
 
   
 
@@ -280,11 +301,35 @@
 </div>
 
 
-      </main>
-    </div>
+    </main>
+  </div>
 
-    <footer>
-      
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
 
     
     <p>Powered by
@@ -297,9 +342,11 @@
     
 
 
-    </footer>
+  </footer>
 
-    
+  
+</body>
 
-  </body>
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
 </html>

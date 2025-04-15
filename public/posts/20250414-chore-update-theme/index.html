@@ -26,25 +26,27 @@
 <link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
 
-<meta name="description" content="What I&#39;m interested in now"/>
+<meta name="description" content=""/>
 
 
 
 <title>
     
-    Now | bgrasmo.com blog
+    Chore: Update theme | bgrasmo.com blog
     
 </title>
 
-<link rel="canonical" href="https://bgrasmo.com/now/"/>
+<link rel="canonical" href="https://bgrasmo.com/posts/20250414-chore-update-theme/"/>
 
-<meta property="og:url" content="https://bgrasmo.com/now/">
+<meta property="og:url" content="https://bgrasmo.com/posts/20250414-chore-update-theme/">
   <meta property="og:site_name" content="bgrasmo.com blog">
-  <meta property="og:title" content="Now">
-  <meta property="og:description" content="What I&#39;m interested in now">
+  <meta property="og:title" content="Chore: Update theme">
+  <meta property="og:description" content="Chore: Update theme, fix breaking changes and merge conflicts">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
-    <meta property="article:modified_time" content="2024-12-07T18:02:37+01:00">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-14T20:33:03+02:00">
+    <meta property="article:modified_time" content="2025-04-15T13:09:40+02:00">
 
 
 
@@ -135,7 +137,7 @@
         </p>
         
       
-        <p class="small  bold ">
+        <p class="small ">
             <a href="/now/" >
                 now
             </a>
@@ -179,17 +181,21 @@
 
     
 
-    <h1 class="single-title">Now</h1>
+    <h1 class="single-title">Chore: Update theme</h1>
 
     
 
     <p class="single-readtime">
       
+      
+      
+      <time datetime="2025-04-14T20:33:03&#43;02:00">First published: 2025-04-14 20:33:03</time>
+      
       <br>
       
       
       
-      <time datetime="2024-12-07T18:02:37&#43;01:00">Last updated: 2024-12-07 18:02:37</time>
+      <time datetime="2025-04-15T13:09:40&#43;02:00">Last updated: 2025-04-15 13:09:40</time>
       
 
       
@@ -206,24 +212,26 @@
   
 
   <div class="single-content">
-    <p>This is a new concept to me, but I liked it so I will try it. This is an idea by
-Derek Sivers which you can read more about here: <a href="https://nownownow.com/about">nownownow.com</a></p>
-<h4 class="heading" id="right-now-i-am">
-  Right now I am:
-  <a class="anchor" href="#right-now-i-am">#</a>
-</h4>
-<ul>
-<li>Starting my blog, which is a lot more work than I had hoped</li>
-<li>
-<ul>
-<li>I do hope I can get the server stuff out of the way so I can focus on what really interests me right now, which is development</li>
-</ul>
-</li>
-<li>Learning programming, TypeScript/JavaScript for now, but I really want to learn more about Python, Go and Rust as well</li>
-<li>Listening to the Expanse series audiobooks</li>
-<li>Staying mostly indoors during weekdays as winter is here and it is cold and dark outside</li>
-<li>We&rsquo;re reorganizing at work for the second time this year, and that has a higher mental cost than anticipated, so it reduces what I have the energy to get involved in</li>
-</ul>
+    <p>So I wanted to update the theme I&rsquo;m using, as a nice automatic &ldquo;copy&rdquo; button
+had been added for code-blocks. Unfortunately I hadn&rsquo;t updated my version
+in a while, and since I had directly changed some files in the theme, the
+first stumble-block was a few merge conflicts.</p>
+<p>And to repeat, since I had directly changed some files in a repository I don&rsquo;t
+have commit rights to, I had nowhere to store my changes so they could be
+available from a different computer either.</p>
+<p>To fix all of this I made a fork of the theme and manually added back my
+changes. Since I now have my own copy of the theme I can commit my changes
+and have them available wherever I need them. Then it was just a matter of
+changing the source of the theme from original author to mine, and everything
+was good.</p>
+<p>An added bonus is that I can easily see in my own repo if original author has
+made any changes on his side, and github also tells me if there are any merge
+conflicts or not. Hopefully this means it will be easier for me to keep the
+theme in sync, just as long as I update/check for changes once in a while.</p>
+<p>This has been a small blocker for me a little while, that&rsquo;s why the &ldquo;silence&rdquo;.
+Now to test if everything works as it should when published (there were some
+changes to how scripts are loaded, and I have strict CSP headers set) and
+continue my learning process.</p>
 
     
   </div>
@@ -236,6 +244,12 @@ Derek Sivers which you can read more about here: <a href="https://nownownow.com/
 
   
 
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
   
 
 </div>
