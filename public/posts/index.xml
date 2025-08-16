@@ -6,8 +6,15 @@
     <description>Recent content in Posts on bgrasmo.com blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Jun 2025 20:14:52 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Aug 2025 16:05:01 +0200</lastBuildDate>
     <atom:link href="https://bgrasmo.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Server downtime</title>
+      <link>https://bgrasmo.com/posts/20250816-server-downtime/</link>
+      <pubDate>Sat, 16 Aug 2025 14:31:59 +0200</pubDate>
+      <guid>https://bgrasmo.com/posts/20250816-server-downtime/</guid>
+      <description>Changed hosting provider and my server went down</description>
+    </item>
     <item>
       <title>Reinstalled desktop pc</title>
       <link>https://bgrasmo.com/posts/20250607-reinstalled-desktop/</link>

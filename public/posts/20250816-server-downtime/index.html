@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="https://bgrasmo.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bgrasmo.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bgrasmo.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://bgrasmo.com/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://bgrasmo.com/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Server downtime | bgrasmo.com blog
+    
+</title>
+
+<link rel="canonical" href="https://bgrasmo.com/posts/20250816-server-downtime/"/>
+
+<meta property="og:url" content="https://bgrasmo.com/posts/20250816-server-downtime/">
+  <meta property="og:site_name" content="bgrasmo.com blog">
+  <meta property="og:title" content="Server downtime">
+  <meta property="og:description" content="Changed hosting provider and my server went down">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-16T14:31:59+02:00">
+    <meta property="article:modified_time" content="2025-08-16T16:05:01+02:00">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.0cecb3484b58885d448a4a470bef09cc6fc3082d4485b4b7b8fbd1d56cdbb2fe.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://bgrasmo.com/">bgrasmo.com blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts/" >
+                posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/article-index/" >
+                index
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about/" >
+                about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/now/" >
+                now
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/uses/" >
+                uses
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags/" >
+                tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+  <article>
+    <header class="single-intro-container">
+        
+        <h1 class="single-title">Server downtime</h1>
+        <p class="single-summary">Changed hosting provider and my server went down</p>
+    
+        <p class="single-readtime">
+          <time datetime="2025-08-16T14:31:59&#43;02:00">First published: 2025-08-16 14:31:59</time>
+        <br>
+        
+          
+          
+          <time datetime="2025-08-16T16:05:01&#43;02:00">Last updated: 2025-08-16 16:05:01</time>
+        
+        </p>
+    </header>
+    
+    <div class="single-content">
+      <p>I&rsquo;ve been hosting this blog on a Hetzner VPS for nearly a year and it has
+been working very well. It&rsquo;s been interesting to run an Ubuntu server myself
+and get to do some small sysadmin tasks. Hetzner has also been rock solid,
+there&rsquo;s been no downtime other than me rebooting to upgrade the Linux kernel
+and so on. I did get a notice once that they experienced an issue that affected
+my server, but I didn&rsquo;t notice anything, there was no noticable downtime. So
+Hetzner get a 10 out of 10 from me, can recommend!</p>
+<p>However, recently I discovered Netcup, another German hosting provider with a
+similar offering to Hetzner, only cheaper. The cheapest Hetzner VPS isn&rsquo;t
+expensive but Netcup is cheaper. This also opens up for getting more resources,
+while not really paying much more. So I decided to switch.</p>
+<p>What initially drew me in was that Netcup allows you to upload your own ISO
+images to run whatever OS you want, as long as it works under KVM. That they
+are also a little cheaper was a nice bonus.</p>
+<p>I&rsquo;ve always liked FreeBSD so when switching providers I wanted to switch OS
+as well. I did want to run FreeBSD on Hetzner, but it wasn&rsquo;t possible to order
+and they have no way to mount a custom ISO. I did try the &ldquo;trick&rdquo; where I
+downloaded a small boot-only image, rebooted to rescue mode, wrote the image to
+the disk and restarted again to start the FreeBSD installer, but I just couldn&rsquo;t
+get it working. I got the installer started, but I just couldn&rsquo;t figure out the
+disk partitioning, so I gave up and settled for Ubuntu.</p>
+<p>I&rsquo;ve later learned that Hetzner have both FreeBSD and OpenBSD available as
+options if you go to reinstall your server so I could have just done that.
+Oh well.</p>
+<p>I&rsquo;ve also learned that they can mount a custom ISO for you if you contact
+support, provide a download link they can just input in their system and it
+just works without them doing anything else, but that seemed a little
+cumbersome.</p>
+<p>Another positive for Hetzner is that I find their administration pages easy
+to understand and navigate. Netcup is a little different in that regard. The
+link on the main page have you log on to one domain, where they have the
+product information, like what products you have bought, your invoices and so
+on. Then you have to log on to a different domain (yes, completely different,
+not a subdomain) to control your VPS. To be fair they have a single-signin
+solution in place so you are automatically signed in. Also to be fair, with
+Hetzner you will have to select &ldquo;account&rdquo; or &ldquo;invoices&rdquo; in the top-right
+hamburger menu, and you are taken to a complete different page to view your
+invoices, but it still feels more natural than the way Netcup are doing things.</p>
+<p>With Netup, they have menu options on the left-hand side, and when you switch
+between them, the more hidden menu in the top right corner also changes content.
+The huge area in the middle also changes content of course but it does not feel
+as intuitive to me to first select something on the left side, then select
+something in the top right corner, and then doing the thing in the middle. My
+personal wish is that the top-right menu should be more connected to the content
+in the middle.</p>
+<p>A minor gripe, and why did this end up being a Hetzner vs Netcup comparison
+when the title is &ldquo;server downtime&rdquo;?</p>
+<p>Anyway, I got FreeBSD installed, I got caddy installed in a jail (FreeBSD
+containerization technology that predates docker by quite a while) and all
+was looking good. Then one morning, perhaps a week after I set it up, I
+woke up to my server being down. Since I&rsquo;m using full disk encryption, I have
+to log on to the console and type my password to decrypt the disk for the server
+to start. I found it went down at around midnight, and I wasn&rsquo;t able to start it
+again until around 7.</p>
+<p>Not a good feeling right now. Yes it is cheaper, but is that why it is cheaper?
+Remember I had run my Hetzner VPS for nearly a year with any kind of downtime
+except my own reboots, and with Netcup the server goes down about a week in.</p>
+<p>I know it&rsquo;s just a practically no-traffic blog I write for myself, but I still
+prefer the services I pay for to work without too much hassle. My Hetzner
+server has been deleted, but we will see. If Netcup keeps going down like this
+I&rsquo;ll probably move back, it might be worth the extra money. I hope it&rsquo;ll stay
+stable and that I was just unlucky, because I really like the extra RAM I got
+which is nice when running ZFS. I also want to explore more around jails and how
+to manage them, for instance with Bastille.</p>
+
+    </div>
+  </article>
+
+  
+
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+</body>
+
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
+</html>
